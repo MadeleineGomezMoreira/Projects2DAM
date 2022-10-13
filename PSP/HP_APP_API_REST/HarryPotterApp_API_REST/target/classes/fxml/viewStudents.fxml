@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTableView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.screens.students.StudentsController">
+    <Pane prefHeight="450.0" prefWidth="700.0" style="-fx-background-image: url(https://cdnb.artstation.com/p/assets/images/images/029/220/659/large/vladimir-stana-9.jpg?1596823313); -fx-background-position: -50; -fx-background-size: 1100px;">
+        <MFXButton fx:id="goBackBtn" layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#goChoiceScreen" prefHeight="31.0" prefWidth="89.0" style="-fx-background-color: Black; -fx-font-size: 15px; -fx-opacity: 85%; -fx-background-radius: 5%;" text="GO BACK" textFill="WHITE" />
+        <Label fx:id="studentsLabel" layoutX="234.0" layoutY="9.0" prefHeight="45.0" prefWidth="233.0" style="-fx-font-size: 25px; -fx-font-weight: bold;" text="LIST OF STUDENTS" textAlignment="CENTER" textFill="WHITE" />
+        <MFXTableView fx:id="tableViewStudents" layoutX="98.0" layoutY="61.0" prefHeight="359.0" prefWidth="505.0" style="-fx-opacity: 70%;" />
+    </Pane>
+</AnchorPane>

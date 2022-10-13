@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0"
+            prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ui.screens.appStart.AppStartController">
+    <MFXButton fx:id="loginBtn" layoutX="210.0" layoutY="140.0" mnemonicParsing="false" onAction="#goViewList"
+               prefHeight="43.0" prefWidth="125.0" text="LOG IN"/>
+    <MFXButton fx:id="registerBtn" layoutX="415.0" layoutY="140.0" mnemonicParsing="false" onAction="#goViewList"
+               prefHeight="43.0" prefWidth="125.0" text="REGISTER"/>
+    <Label fx:id="pokemonPCLabel" layoutX="203.0" layoutY="49.0" prefHeight="45.0" prefWidth="344.0"
+           style="-fx-font-size: 30px; -fx-font-weight: bold;" text="READERS' DIGEST APP"/>
+    <Label fx:id="versionLabel" layoutX="20.0" layoutY="467.0" prefHeight="21.0" prefWidth="49.0" text="V. 0.0.1"/>
+</AnchorPane>

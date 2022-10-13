@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="HarryPotterApp_API_REST" />
+        <module name="PokemonStoragePC_MadeleineGomezMoreira" />
+        <module name="test_javafx11_multipantalla_test" />
+        <module name="CryptoSmartApp_API_REST" />
+        <module name="javafx11_multipantalla" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

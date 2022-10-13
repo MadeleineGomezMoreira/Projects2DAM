@@ -1,0 +1,56 @@
+[
+  {
+    "pokeName": "Bulbasaur",
+    "nickname": "",
+    "dexNum": "001",
+    "favorite": false
+  },
+  {
+    "pokeName": "Ivysaur",
+    "nickname": "",
+    "dexNum": "002",
+    "favorite": false
+  },
+  {
+    "pokeName": "Venusaur",
+    "nickname": "",
+    "dexNum": "003",
+    "favorite": false
+  },
+  {
+    "pokeName": "Charmander",
+    "nickname": "",
+    "dexNum": "004",
+    "favorite": false
+  },
+  {
+    "pokeName": "Charmeleon",
+    "nickname": "",
+    "dexNum": "005",
+    "favorite": false
+  },
+  {
+    "pokeName": "Charizard",
+    "nickname": "",
+    "dexNum": "006",
+    "favorite": false
+  },
+  {
+    "pokeName": "Squirtle",
+    "nickname": "",
+    "dexNum": "007",
+    "favorite": false
+  },
+  {
+    "pokeName": "Wartortle",
+    "nickname": "",
+    "dexNum": "008",
+    "favorite": false
+  },
+  {
+    "pokeName": "Blastoise",
+    "nickname": "",
+    "dexNum": "009",
+    "favorite": false
+  }
+]

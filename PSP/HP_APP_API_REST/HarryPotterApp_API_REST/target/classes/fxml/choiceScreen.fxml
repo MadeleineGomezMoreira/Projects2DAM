@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.screens.choice.ChoiceController">
+    <Pane prefHeight="450.0" prefWidth="700.0" style="-fx-background-image: url(https://cdna.artstation.com/p/assets/images/images/032/123/348/large/jerome-comentale-hogwarts.jpg?1605547034); -fx-background-size: 1300px;">
+        <Pane layoutX="70.0" layoutY="31.0" prefHeight="389.0" prefWidth="560.0" style="-fx-background-color: rgba(255,255,255,0.5);">
+            <Label fx:id="greetLabelOne" layoutX="131.0" layoutY="14.0" prefHeight="51.0" prefWidth="298.0" style="-fx-font-size: 35px; -fx-font-weight: bold;" text="VISIT HOGWARTS" textAlignment="CENTER" textFill="WHITE" />
+            <MFXButton fx:id="goListBtn" layoutX="111.0" layoutY="134.0" onAction="#goAllStudents" prefHeight="41.0" prefWidth="133.0" rippleColor="#300000" style="-fx-font-size: 15px; -fx-background-color: white; -fx-opacity: 75%; -fx-background-radius: 5%; -fx-font-weight: bold;" text="STUDENTS" textFill="#300000" />
+            <MFXButton fx:id="goStaffBtn" layoutX="309.0" layoutY="134.0" onAction="#goStaff" prefHeight="41.0" prefWidth="133.0" rippleColor="#300000" style="-fx-font-size: 15px; -fx-background-color: white; -fx-opacity: 75%; -fx-background-radius: 5%; -fx-font-weight: bold;" text="STAFF" textFill="#300000" />
+            <MFXButton fx:id="goHousesBtn" layoutX="309.0" layoutY="195.0" onAction="#goHouses" prefHeight="41.0" prefWidth="133.0" rippleColor="#300000" style="-fx-font-size: 15px; -fx-background-color: white; -fx-opacity: 75%; -fx-background-radius: 5%; -fx-font-weight: bold;" text="HOUSES" textFill="#300000" />
+            <MFXButton fx:id="goSpellsBtn" layoutX="111.0" layoutY="195.0" onAction="#goSpells" prefHeight="41.0" prefWidth="133.0" rippleColor="#300000" style="-fx-font-size: 15px; -fx-background-color: white; -fx-opacity: 75%; -fx-background-radius: 5%; -fx-font-weight: bold;" text="SPELLS" textFill="#300000" />
+            <MFXButton fx:id="goBackBtn" layoutX="14.0" layoutY="340.0" onAction="#goBack" prefHeight="35.0" prefWidth="96.0" rippleColor="#300000" style="-fx-font-size: 15px; -fx-background-color: BLACK; -fx-opacity: 75%; -fx-background-radius: 5%;" text="GO BACK" textFill="WHITE" />
+        </Pane>
+    </Pane>
+</AnchorPane>

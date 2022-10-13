@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0"
+            prefWidth="750.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ui.screens.start.StartController">
+    <Pane prefHeight="500.0" prefWidth="750.0"
+          style="-fx-background-image: url(https://cdnb.artstation.com/p/assets/images/images/037/259/295/large/kevin-gnutzmans-final-paint.jpg?1619913137); -fx-background-size: 1200px; -fx-background-position: -90;">
+        <Label fx:id="quoteLabel" layoutX="-6.0" layoutY="377.0" prefHeight="53.0" prefWidth="757.0"
+               style="-fx-background-color: rgba(255,255,255,0.7); -fx-font-weight: bold;"
+               text="                             &quot;It is our choices, Harry, that show what we truly are, far more than our abilities.&quot;"
+               textAlignment="CENTER">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+        <Label fx:id="titleLabelOne" layoutX="227.0" layoutY="101.0" prefHeight="45.0" prefWidth="296.0"
+               style="-fx-font-size: 30px; -fx-font-weight: bold;" text="WIZARDING WORLD"/>
+        <Label fx:id="versionLabel" layoutX="20.0" layoutY="467.0" prefHeight="21.0" prefWidth="49.0"
+               style="-fx-font-size: 15px;" text="V. 0.0.1" textFill="WHITE"/>
+        <Label fx:id="titleLabelTwo" layoutX="240.0" layoutY="56.0" prefHeight="31.0" prefWidth="271.0"
+               style="-fx-font-size: 30px; -fx-font-weight: bold;" text="WELCOME TO THE" textAlignment="CENTER">
+            <font>
+                <Font size="6.0"/>
+            </font>
+        </Label>
+        <MFXButton fx:id="startBtn" buttonType="RAISED" layoutX="310.0" layoutY="229.0" onAction="#goChoiceScreen"
+                   prefHeight="42.0" prefWidth="125.0"
+                   style="-fx-background-color: black; -fx-font-size: 20px; -fx-opacity: 80%; -fx-background-radius: 5%;"
+                   text="START" textFill="WHITE"/>
+    </Pane>
+</AnchorPane>

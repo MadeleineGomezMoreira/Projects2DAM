@@ -1,0 +1,17 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(øÅÏ¼ùÿÿÿÿ
+X
+java:S2094"BRemove this empty class, write its code or make it an "interface".(Â—¤ÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(›¶¢‡
+M
+java:S1128"2Remove this unused import 'jakarta.inject.Inject'.(ž‘ø”þÿÿÿÿ
+\
+java:S1128"ARemove this unused import 'javafx.beans.property.ObjectProperty'.(ÃÚô¯þÿÿÿÿ
+_
+java:S1128"IRemove this unused import 'javafx.beans.property.ReadOnlyObjectProperty'.(¡ŽßÎ
+]
+java:S1128"GRemove this unused import 'javafx.beans.property.SimpleObjectProperty'.(¶Ö­¤
+F
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
+F
+java:S1128	"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ

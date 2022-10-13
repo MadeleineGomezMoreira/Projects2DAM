@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ExampleButtonText</string>
+    <string name="adminMail">admin@gmail.com</string>
+    <string name="adminPassword">admin</string>
+    <string name="successfulLogin">Login Successful</string>
+    <string name="FailedLogin">Login Failed</string>
+    <string name="email">email</string>
+    <string name="SEND">send</string>
+    <string name="password">password</string>
+</resources>

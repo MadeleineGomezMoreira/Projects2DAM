@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTableView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.screens.houses.HousesController">
+    <Pane prefHeight="450.0" prefWidth="700.0" style="-fx-background-image: url(https://cdnb.artstation.com/p/assets/images/images/045/989/999/large/bradley-pujala-bpshot-05.jpg?1644014623); -fx-background-position: -50; -fx-background-size: 1100px;">
+        <MFXButton fx:id="goBackBtn" layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#goChoiceScreen" prefHeight="31.0" prefWidth="89.0" style="-fx-background-color: Black; -fx-font-size: 15px; -fx-opacity: 85%; -fx-background-radius: 5%;" text="GO BACK" textFill="WHITE" />
+        <Label fx:id="housesLabel" layoutX="242.0" layoutY="9.0" prefHeight="45.0" prefWidth="217.0" style="-fx-font-size: 25px; -fx-font-weight: bold;" text="HOUSE MEMBERS" textAlignment="CENTER" textFill="WHITE" />
+        <MFXTableView fx:id="tableViewGryff" layoutX="37.0" layoutY="152.0" prefHeight="276.0" prefWidth="133.0" style="-fx-opacity: 70%;" />
+      <MFXTableView fx:id="tableViewSlyth" layoutX="202.0" layoutY="152.0" prefHeight="276.0" prefWidth="133.0" style="-fx-opacity: 70%;" />
+      <MFXTableView fx:id="tableViewHuff" layoutX="365.0" layoutY="152.0" prefHeight="276.0" prefWidth="133.0" style="-fx-opacity: 70%;" />
+      <MFXTableView fx:id="tableViewRaven" layoutX="528.0" layoutY="152.0" prefHeight="276.0" prefWidth="133.0" style="-fx-opacity: 70%;" />
+      <Pane fx:id="logoPaneGryff" layoutX="59.0" layoutY="61.0" prefHeight="84.0" prefWidth="89.0" style="-fx-background-size: 100px;" />
+      <Pane fx:id="logoPaneSlyth" layoutX="224.0" layoutY="61.0" prefHeight="84.0" prefWidth="89.0" style="-fx-background-size: 100px;"/>
+      <Pane fx:id="logoPaneHuff" layoutX="387.0" layoutY="61.0" prefHeight="84.0" prefWidth="89.0" style="-fx-background-size: 100px;"/>
+      <Pane fx:id="logoPaneRaven" layoutX="550.0" layoutY="61.0" prefHeight="84.0" prefWidth="89.0" style="-fx-background-size: 100px;"/>
+
+    </Pane>
+</AnchorPane>

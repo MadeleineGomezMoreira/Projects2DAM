@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="root" prefHeight="400.0" prefWidth="600.0" stylesheets="@/css/style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.screens.principal.PrincipalController">
+    <center>
+    </center>
+    <top>
+        <MenuBar fx:id="menuPrincipal">
+            <menus>
+                <Menu fx:id="optionsMenu" mnemonicParsing="false" text="OPTIONS">
+                    <items>
+                        <MenuItem fx:id="menuItemLogout" mnemonicParsing="false" text="Logout" />
+                        <MenuItem fx:id="menuItemExit" mnemonicParsing="false" text="Exit" />
+                    </items>
+                </Menu>
+                <Menu fx:id="newspaperMenu" mnemonicParsing="false" text="NEWSPAPER">
+                    <items>
+                        <MenuItem fx:id="menuItemListN" mnemonicParsing="false" text="List" />
+                        <MenuItem fx:id="menuItemAddN" mnemonicParsing="false" text="Add" />
+                        <MenuItem fx:id="menuItemUpdateN" mnemonicParsing="false" text="Update" />
+                        <MenuItem fx:id="menuItemDeleteN" mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu fx:id="articleMenu" mnemonicParsing="false" text="ARTICLE">
+                    <items>
+                        <MenuItem fx:id="menuItemListA" mnemonicParsing="false" text="List" />
+                        <MenuItem fx:id="menuItemAddA" mnemonicParsing="false" text="Add" />
+                        <MenuItem fx:id="menuItemUpdateA" mnemonicParsing="false" text="Update" />
+                        <MenuItem fx:id="menuItemDeleteA" mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu fx:id="readerMenu" mnemonicParsing="false" text="READER">
+                    <items>
+                        <MenuItem fx:id="menuItemListR" mnemonicParsing="false" text="List" />
+                        <MenuItem fx:id="menuItemAddR" mnemonicParsing="false" text="Add" />
+                        <MenuItem fx:id="menuItemUpdateR" mnemonicParsing="false" text="Update" />
+                        <MenuItem fx:id="menuItemDeleteR" mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+</BorderPane>

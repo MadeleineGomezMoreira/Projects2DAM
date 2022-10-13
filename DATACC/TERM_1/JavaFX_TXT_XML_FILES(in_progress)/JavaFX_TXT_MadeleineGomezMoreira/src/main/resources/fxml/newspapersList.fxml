@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTableView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0"
+            prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ui.screens.newspapersList.NewspapersListController">
+    <Pane layoutX="446.0" layoutY="19.0" prefHeight="345.0" prefWidth="237.0"
+          style="-fx-background-color: rgba(255,255,255,0.5);">
+        <Label fx:id="detailsLabel" alignment="CENTER" layoutY="-1.0" prefHeight="31.0" prefWidth="237.0"
+               text="DETAILS"/>
+        <Label fx:id="nameLabel" layoutX="14.0" layoutY="36.0" prefHeight="26.0" prefWidth="49.0" text="Name"/>
+        <Label fx:id="releaseDateLabel" layoutX="14.0" layoutY="109.0" prefHeight="26.0" prefWidth="75.0"
+               text="R. Date"/>
+        <Label fx:id="nameFillLabel" layoutX="80.0" layoutY="37.0" prefHeight="26.0" prefWidth="97.0"/>
+        <Label fx:id="releaseDateFillLabel" layoutX="14.0" layoutY="72.0" prefHeight="26.0" prefWidth="49.0" text="Id"/>
+    </Pane>
+    <MFXButton fx:id="goBackBtn" layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#goAppStart"
+               prefHeight="26.0" prefWidth="83.0" text="GO BACK"/>
+    <Label fx:id="newspapersLabel" layoutX="147.0" layoutY="5.0" prefHeight="45.0" prefWidth="302.0" text="NEWSPAPERS"/>
+    <MFXButton fx:id="buttonOne" layoutX="504.0" layoutY="350.0" mnemonicParsing="false" prefHeight="33.0"
+               prefWidth="125.0" text="EDIT"/>
+    <MFXButton fx:id="buttonTwo" layoutX="497.0" layoutY="396.0" mnemonicParsing="false" prefHeight="33.0"
+               prefWidth="139.0" text="DELETE SELECTED"/>
+    <MFXTableView fx:id="tableViewNewspapersList" layoutX="17.0" layoutY="65.0" prefHeight="368.0" prefWidth="412.0"/>
+</AnchorPane>
