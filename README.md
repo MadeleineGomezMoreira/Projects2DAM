@@ -3,9 +3,9 @@
 
 ###CONTACT ME:
 
-#### ~~Linkedin~~ : https://www.linkedin.com/in/clara-madeleine-g%C3%B3mez-moreira-466bb61b2/
+#### Linkedin : https://www.linkedin.com/in/clara-madeleine-g%C3%B3mez-moreira-466bb61b2/
 
-#### ~~Email~~ : claragomezmoreira@gmail.com
+#### Email : claragomezmoreira@gmail.com
 
 ---
 
