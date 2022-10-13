@@ -31,7 +31,7 @@
   - Bootstrap
   - Javascript
   
-  + I've studied:
++ I'm learning about:
 
   - Kotlin
   - Pyhton
