@@ -7,11 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="javafx11_multipantalla" />
+        <module name="PokemonStoragePC_MadeleineGomezMoreira" />
+        <module name="test_javafx11_multipantalla_test" />
+        <module name="JavaFX_TXT_MadeleineGomezMoreira" />
+        <module name="JavaFX_TXT_MadeleineGomezMoreira(1)" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="javafx11_multipantalla" target="11" />
-    </bytecodeTargetLevel>
   </component>
 </project>
