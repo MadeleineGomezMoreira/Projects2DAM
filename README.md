@@ -31,12 +31,13 @@
   - Bootstrap
   - Javascript
   
- + I'm currently learning about:
- 
+  + I've studied:
+
   - Kotlin
-  - Python
+  - Pyhton
   - MYSQL
   - Even MORE Java!!
+
   
 ---
 
