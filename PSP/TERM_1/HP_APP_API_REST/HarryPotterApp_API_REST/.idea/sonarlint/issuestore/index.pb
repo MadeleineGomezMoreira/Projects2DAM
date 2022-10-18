@@ -31,8 +31,6 @@ c
 3src/main/java/domain/servicios/StudentServices.java,7\c\7cfa1edf05eb555513db4e43cc14a959f24ff17b
 d
 4src/main/java/ui/screens/choice/ChoiceViewModel.java,1\7\174658655173957d76ee351576da4adfe9acbad8
-d
-4src/main/java/ui/screens/spells/SpellsViewModel.java,8\a\8a8da7a91a26e2d36fd80968d1562cbc9f27009e
 ^
 .src/main/java/ui/screens/staff/StaffState.java,b\6\b6e14cfccdfa25fade1d0ddddb1bb9c40658b340
 d
@@ -71,8 +69,6 @@ e
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 P
  src/main/java/dao/DaoHouses.java,c\d\cd17954ff4853e5e6ee1d65f7b502f8fef0f355e
-`
-0src/main/java/ui/screens/houses/HousesState.java,a\3\a3808618905c24f52e33e6f4eb447e661bc73243
 h
 8src/main/java/ui/screens/students/StudentsViewModel.java,0\2\021113b5a6d63fe22bf09462838e401d9001d7ac
 b
@@ -83,3 +79,11 @@ i
 9src/main/java/ui/screens/students/StudentsController.java,8\c\8c0fb8a25f5f44c853d640cb94df970839f1dd3e
 g
 7src/main/java/dao/retrofit/llamadas/HarryPotterAPI.java,e\e\ee1f819a80aaf0417373d4bf113f48a6db8ae178
+`
+0src/main/java/ui/screens/houses/HousesState.java,a\3\a3808618905c24f52e33e6f4eb447e661bc73243
+`
+0src/main/java/ui/screens/spells/SpellsState.java,6\7\67d96933443aacaab1e7b4b5deadf24207dd0da7
+d
+4src/main/java/ui/screens/spells/SpellsViewModel.java,8\a\8a8da7a91a26e2d36fd80968d1562cbc9f27009e
+e
+5src/main/java/ui/screens/spells/SpellsController.java,5\1\51aea72bad730b89ba6eae80f1f25389488da36c

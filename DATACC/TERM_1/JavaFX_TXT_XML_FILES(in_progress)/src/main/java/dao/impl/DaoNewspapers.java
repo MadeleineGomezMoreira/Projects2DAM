@@ -19,22 +19,26 @@ import io.vavr.control.Either;
 public class DaoNewspapers {
 
     private Configuration configuration;
-    private List<Newspaper> newspapers;
+    //private List<Newspaper> newspapers;
 
     @Inject
     public DaoNewspapers(Configuration configuration) {
         this.configuration = configuration;
     }
 
-
+/*
     //Esto hará que se carguen los periódicos al inicializar la clase
     public DaoNewspapers() {
         this.newspapers = this.loadNewspapers().getOrElse(new ArrayList<>());
     }
 
+ */
+/*
     public List<Newspaper> getNewspapers() {
         return this.newspapers;
     }
+
+ */
 
 
     public Either<String, List<Newspaper>> loadNewspapers() {
@@ -119,7 +123,7 @@ public class DaoNewspapers {
      */
 
 
-
+/*
 
     public Newspaper findNewspaper(int id) {
 
@@ -134,6 +138,8 @@ public class DaoNewspapers {
         }
         return auxNewspaper;
     }
+
+ */
 
 
 

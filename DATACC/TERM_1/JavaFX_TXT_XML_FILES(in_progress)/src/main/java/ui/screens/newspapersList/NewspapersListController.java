@@ -63,7 +63,7 @@ public class NewspapersListController extends BaseScreenController implements In
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         MFXTableColumn<Newspaper> nameColumn = new MFXTableColumn<>("Name");
-        MFXTableColumn<Newspaper> idColumn = new MFXTableColumn<>("ID");
+        MFXTableColumn<Newspaper> idColumn = new MFXTableColumn<>("Id");
         MFXTableColumn<Newspaper> releaseDateColumn = new MFXTableColumn<>("Release Date");
 
         nameColumn.setRowCellFactory(harryPotterCharacter -> new MFXTableRowCell<>(Newspaper::getName));
@@ -74,22 +74,20 @@ public class NewspapersListController extends BaseScreenController implements In
         tableViewNewspapersList.getTableColumns().addAll(nameColumn, idColumn, releaseDateColumn);
 
 
-        stateChanges();
         viewModel.loadNewspapers();
+        stateChanges();
 
     }
 
     private void stateChanges() {
-        System.out.println(1);
+        //Entra aquí pero no pasa al if :/
         viewModel.getState().addListener((observableValue, oldValue, newValue) -> {
-            //System.out.println(oldValue.toString()+newValue.toString());
             if(newValue.getError() != null){
                 Alert a = new Alert(Alert.AlertType.ERROR);
                 a.setContentText(newValue.getError());
                 a.showAndWait();
             }
             if(newValue.getNewspapers() != null){
-                System.out.println(newValue.getNewspapers().toString());
                 tableViewNewspapersList.getItems().clear();
                 tableViewNewspapersList.getItems().addAll(newValue.getNewspapers());
             }

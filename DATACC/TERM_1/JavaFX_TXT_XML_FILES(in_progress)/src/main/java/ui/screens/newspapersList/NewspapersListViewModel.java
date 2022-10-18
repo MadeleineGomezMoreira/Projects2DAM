@@ -30,6 +30,7 @@ public class NewspapersListViewModel {
 
         List<Newspaper> newspapers = newspaperServices.loadNewspapers().getOrElse(new ArrayList<>());
 
+
         NewspapersListState state = new NewspapersListState(newspapers, null);
         _state.setValue(state);
 
