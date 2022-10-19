@@ -61,7 +61,6 @@ public class NewspapersListController extends BaseScreenController implements In
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         MFXTableColumn<Newspaper> nameColumn = new MFXTableColumn<>("Name");
         MFXTableColumn<Newspaper> idColumn = new MFXTableColumn<>("Id");
         MFXTableColumn<Newspaper> releaseDateColumn = new MFXTableColumn<>("Release Date");
@@ -73,9 +72,10 @@ public class NewspapersListController extends BaseScreenController implements In
 
         tableViewNewspapersList.getTableColumns().addAll(nameColumn, idColumn, releaseDateColumn);
 
+        stateChanges();
 
         viewModel.loadNewspapers();
-        stateChanges();
+
 
     }
 

@@ -8,8 +8,8 @@ import java.util.List;
 @Data
 public class NewspapersListState {
 
-    private final List<Newspaper> newspapers;
-    private final String error;
+    private List<Newspaper> newspapers;
+    private String error;
 
 
     public NewspapersListState(List<Newspaper> newspapers, String error) {

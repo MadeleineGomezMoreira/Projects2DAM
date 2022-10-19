@@ -1,8 +1,0 @@
-
-E
-java:S37404"/Provide the parametrized type for this generic.(Š°‚
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ø¿×‚
-—
-java:S1186d"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(§¥·¹
-T
-java:S1128">Remove this unused import 'ui.screens.common.ScreenConstants'.(“©¥²

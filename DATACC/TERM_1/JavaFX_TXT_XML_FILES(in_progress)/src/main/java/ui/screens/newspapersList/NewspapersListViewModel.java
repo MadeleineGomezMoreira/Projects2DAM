@@ -20,8 +20,6 @@ public class NewspapersListViewModel {
     public NewspapersListViewModel(NewspaperServices newspaperServices) {
         this.newspaperServices = newspaperServices;
         _state = new SimpleObjectProperty<>(new NewspapersListState(null, null));
-        this.loadNewspapers();
-
     }
 
 
@@ -42,6 +40,7 @@ public class NewspapersListViewModel {
     private ObjectProperty<NewspapersListState> _state;
 
     public ReadOnlyObjectProperty<NewspapersListState> getState() {
+        System.out.println(1);
         return _state;
     }
 
