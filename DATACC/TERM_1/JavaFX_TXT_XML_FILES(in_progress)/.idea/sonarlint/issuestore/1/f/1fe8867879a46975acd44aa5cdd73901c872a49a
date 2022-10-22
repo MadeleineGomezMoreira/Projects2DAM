@@ -1,0 +1,6 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ø¿×‚
+k	java:S116("QRename this field "_state" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µþÌ„ýÿÿÿÿ
+Z	java:S106+"9Replace this use of System.out or System.err by a logger.(ìÑÑÈÿÿÿÿÿ8ù“×Ý¾0
+P
+java:S1128"3Remove this unused import 'io.vavr.control.Either'.(÷¿œ’8û“×Ý¾0

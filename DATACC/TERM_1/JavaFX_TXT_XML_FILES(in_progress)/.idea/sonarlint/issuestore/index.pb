@@ -51,3 +51,13 @@ y
 Isrc/main/java/ui/screens/newspapersUpdate/NewspapersUpdateController.java,4\c\4ce770faa91dbab9cb38b99ad30dc64370712338
 d
 4src/main/java/domain/services/NewspaperServices.java,6\d\6dd29bc7294bc2ae221fb93d93a42333cbeba483
+p
+@src/main/java/ui/screens/newspapersList/NewspapersListState.java,1\6\16a654d3d6a12b12d3c1040dbd3d078e69153c77
+u
+Esrc/main/java/ui/screens/newspapersList/NewspapersListController.java,b\4\b4ed2aaf32291a53eda29e083190c318e92fa6c1
+t
+Dsrc/main/java/ui/screens/newspapersList/NewspapersListViewModel.java,1\f\1fe8867879a46975acd44aa5cdd73901c872a49a
+W
+'src/main/java/dao/impl/DaoArticles.java,1\f\1fdcd66a699ff78ddc8a1c88791afebcc23e6c6f
+Y
+)src/main/java/dao/impl/DaoNewspapers.java,8\6\865f2c21ab2338278cbf25321c1f4fe2645f0961
