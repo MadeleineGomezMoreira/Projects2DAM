@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">CRUD_PROJECT</string>
+    <string name="birthday">birthday</string>
+    <string name="active">Active</string>
+    <string name="id">id</string>
+    <string name="name">name</string>
+    <string name="index">index</string>
+    <string name="view">VIEW</string>
+    <string name="phone">phone</string>
+    <string name="gender">gender</string>
+    <string name="birth_year">birth year</string>
 </resources>

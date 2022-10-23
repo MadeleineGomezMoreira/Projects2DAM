@@ -9,9 +9,11 @@ class Repository {
     private val employeeList = mutableListOf<Employee>()
 
     init {
-        employeeList.add(Employee("e1", "1", "F", 1999, true, 916921723))
-        employeeList.add(Employee("e2", "2", "F", 2000, true, 916921724))
-        employeeList.add(Employee("e3", "3", "F", 2001, false, 916921725))
+        employeeList.add(Employee("Martha", "12642", "F", 1999, true, 916921723))
+        employeeList.add(Employee("Sarah", "27432", "F", 2000, true, 916921724))
+        employeeList.add(Employee("Lilith", "32108", "F", 2001, false, 916921725))
+        employeeList.add(Employee("Jacob", "43473", "M", 1997, false, 916921726))
+        employeeList.add(Employee("Isaac", "52037", "M", 1998, true, 916921727))
     }
 
     private val mapEmployees = mutableMapOf<String, Employee>()

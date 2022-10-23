@@ -10,11 +10,11 @@
         android:id="@+id/viewButton"
         android:layout_width="118dp"
         android:layout_height="62dp"
-        android:text="VIEW"
+        android:text="@string/view"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etNumber"
-        app:layout_constraintStart_toEndOf="@id/arrowLeftButton"
         app:layout_constraintEnd_toStartOf="@id/arrowRightButton"
+        app:layout_constraintStart_toEndOf="@id/arrowLeftButton"
+        app:layout_constraintTop_toBottomOf="@id/etNumber"
         tools:layout_editor_absoluteX="146dp" />
 
     <Button
@@ -23,10 +23,9 @@
         android:layout_height="63dp"
         android:background="@drawable/arrow_left_bold_circle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/viewButton"
-        app:layout_constraintTop_toBottomOf="@id/etNumber"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etNumber" />
 
     <Button
         android:id="@+id/arrowRightButton"
@@ -36,88 +35,141 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/viewButton"
-        app:layout_constraintTop_toBottomOf="@id/etNumber"/>
+        app:layout_constraintTop_toBottomOf="@id/etNumber" />
 
 
     <EditText
         android:id="@+id/etNumber"
         android:layout_width="170dp"
         android:layout_height="48dp"
+        android:autofillHints=""
         android:ems="10"
-        android:hint="index"
+        android:hint="@string/index"
         android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@id/viewButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etPhone"
-        app:layout_constraintBottom_toTopOf="@id/viewButton"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@id/etPhone" />
 
     <EditText
         android:id="@+id/etName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="name"
+        android:hint="@string/name"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@id/tvId"
+        app:layout_constraintEnd_toStartOf="@id/genderChip"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/etId"
-        app:layout_constraintEnd_toStartOf="@id/genderChip"/>
+        app:layout_constraintTop_toBottomOf="@id/tvName" />
 
     <EditText
         android:id="@+id/etId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="id"
+        android:hint="@string/id"
         android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@id/tvBirthYear"
         app:layout_constraintEnd_toStartOf="@id/activeSwitch"
-        app:layout_constraintBottom_toTopOf="@id/etDate" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvId" />
 
 
-    <Switch
+    <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/activeSwitch"
-        android:layout_width="90dp"
-        android:layout_height="44dp"
-        android:text="Active"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:text="@string/active"
+        app:layout_constraintBottom_toTopOf="@id/etBirthYear"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/genderChip"
         app:layout_constraintStart_toEndOf="@id/etId"
-        app:layout_constraintBottom_toTopOf="@id/etDate"/>
+        app:layout_constraintTop_toBottomOf="@id/genderChip" />
 
     <com.google.android.material.chip.Chip
         android:id="@+id/genderChip"
         android:layout_width="88dp"
-        android:layout_height="42dp"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toTopOf="@id/activeSwitch"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/etName"
-        app:layout_constraintBottom_toTopOf="@id/activeSwitch"/>
+        app:layout_constraintTop_toBottomOf="@id/tvGender" />
 
     <EditText
-        android:id="@+id/etDate"
+        android:id="@+id/etBirthYear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="birthday"
+        android:hint="@string/birthday"
         android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toTopOf="@id/tvPhone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etId"
-        app:layout_constraintBottom_toTopOf="@id/etPhone"/>
+        app:layout_constraintTop_toBottomOf="@id/tvBirthYear" />
 
     <EditText
         android:id="@+id/etPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="phone"
+        android:hint="@string/phone"
         android:inputType="phone"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@id/etNumber"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etDate"
-        app:layout_constraintBottom_toTopOf="@id/etNumber"/>
+        app:layout_constraintTop_toBottomOf="@id/tvPhone" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="114dp"
+        android:layout_height="31dp"
+        android:text="@string/name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/etName"
+        app:layout_constraintEnd_toStartOf="@id/tvGender" />
+
+    <TextView
+        android:id="@+id/tvGender"
+        android:layout_width="114dp"
+        android:layout_height="31dp"
+        android:text="@string/gender"
+        app:layout_constraintBottom_toTopOf="@id/genderChip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvBirthYear"
+        android:layout_width="114dp"
+        android:layout_height="31dp"
+        android:text="@string/birth_year"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etId"
+        app:layout_constraintBottom_toTopOf="@id/etBirthYear"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/tvPhone"
+        android:layout_width="114dp"
+        android:layout_height="31dp"
+        android:text="@string/phone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etBirthYear"
+        app:layout_constraintBottom_toTopOf="@id/etPhone"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/tvId"
+        android:layout_width="114dp"
+        android:layout_height="31dp"
+        android:text="@string/id"
+        app:layout_constraintTop_toBottomOf="@id/etName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/genderChip"
+        app:layout_constraintBottom_toTopOf="@id/etId"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

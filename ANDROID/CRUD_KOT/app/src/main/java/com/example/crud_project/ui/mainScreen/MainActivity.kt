@@ -3,6 +3,7 @@ package com.example.crud_project.ui.mainScreen
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.crud_project.databinding.ActivityMainBinding
 import com.example.crud_project.domain.model.Employee
@@ -35,21 +36,22 @@ class MainActivity : AppCompatActivity() {
                 etPhone.setText("${employee.phoneNumber}")
                 etDate.setText("${employee.birthYear}")
                 etId.setText(employee.id)
-                if(employee.active){
-                    activeSwitch.isChecked = true
-                }
+                activeSwitch.isChecked = employee.active
                 genderChip.setText(employee.gender)
             }
 
 
             viewButton.setOnClickListener {
-                //I need this to cycle through the employees going from the last to the first
-                //error control (cannot show a number higher than the list or 0 by looking at etNumber.text.toString().toInt())
+
                 val employees : List<Employee> = viewModel.getEmployees()
-
-                val actualEmployee : Employee = viewModel.getEmployeeIndex(etNumber.text.toString().toInt()-1)
-
-                changeEmployee(actualEmployee)
+                val index : Int = etNumber.text.toString().toInt()-1
+                if (index < employees.size+1 && index > 0){
+                    val actualEmployee : Employee = viewModel.getEmployeeIndex(index)
+                    changeEmployee(actualEmployee)
+                }
+                else{
+                    Toast.makeText(this@MainActivity, Constants.ERROR, Toast.LENGTH_SHORT).show()
+                }
 
             }
 
@@ -57,31 +59,29 @@ class MainActivity : AppCompatActivity() {
             arrowLeftButton.setOnClickListener {
 
                 val employees : List<Employee> = viewModel.getEmployees()
-                if(etNumber.text.toString().toInt() < employees.size){
+                etNumber.setText("${etNumber.text.toString().toInt() - 1}")
+                println(employees.size.toString())
+                if(etNumber.text.toString().toInt()-1 < 0){
                     etNumber.setText(employees.size.toString())
                 }
-                else{
-                    etNumber.setText("${etNumber.text.toString().toInt() - 1}")
-                }
-                val actualEmployee : Employee = viewModel.getEmployeeIndex(etNumber.text.toString().toInt()-1)
 
+                val index : Int = etNumber.text.toString().toInt()-1
+                val actualEmployee : Employee = viewModel.getEmployeeIndex(index)
                 changeEmployee(actualEmployee)
 
             }
 
             arrowRightButton.setOnClickListener {
 
-
-
                 val employees : List<Employee> = viewModel.getEmployees()
-                if(etNumber.text.toString().toInt() > employees.size || etNumber.text.toString().toInt() == 0){
-                    etNumber.setText("1")
-                }
-                else{
-                    etNumber.setText("${etNumber.text.toString().toInt() + 1}")
-                }
-                val actualEmployee : Employee = viewModel.getEmployeeIndex(etNumber.text.toString().toInt()-1)
+                etNumber.setText("${etNumber.text.toString().toInt() + 1}")
+                if(etNumber.text.toString().toInt()-1 > employees.size-1){
 
+                    etNumber.setText(Constants.BASEVALUE)
+                }
+
+                val index : Int = etNumber.text.toString().toInt()-1
+                val actualEmployee : Employee = viewModel.getEmployeeIndex(index)
                 changeEmployee(actualEmployee)
 
             }
