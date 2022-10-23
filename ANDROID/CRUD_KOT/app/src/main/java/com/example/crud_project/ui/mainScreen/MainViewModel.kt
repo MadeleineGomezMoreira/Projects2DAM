@@ -6,11 +6,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.crud_project.domain.model.Employee
 import com.example.crud_project.domain.usecases.employees.GetEmployeeByIndexUseCase
+import com.example.crud_project.domain.usecases.employees.GetEmployeesUseCase
 import com.example.crud_project.utils.StringProvider
 
 class MainViewModel(
     private val stringProvider: StringProvider,
     private val getEmployeeByIndexUseCase: GetEmployeeByIndexUseCase,
+    private val getEmployeesUseCase: GetEmployeesUseCase,
 ) : ViewModel() {
     private val _uiState = MutableLiveData<MainState>()
     val uiState: LiveData<MainState> get() = _uiState
@@ -23,6 +25,11 @@ class MainViewModel(
         return employee
     }
 
+    fun getEmployees() : List<Employee>{
+        val employees = getEmployeesUseCase()
+        return employees
+    }
+
     fun errorMostrado() {
         _uiState.value = _uiState.value?.copy(error = null)
     }
@@ -30,6 +37,7 @@ class MainViewModel(
     class MainViewModelFactory(
         private val stringProvider: StringProvider,
         private val getEmployeeByIndexUseCase: GetEmployeeByIndexUseCase,
+        private val getEmployeesUseCase: GetEmployeesUseCase,
 
 
         ) : ViewModelProvider.Factory {
@@ -39,6 +47,7 @@ class MainViewModel(
                 return MainViewModel(
                     stringProvider,
                     getEmployeeByIndexUseCase,
+                    getEmployeesUseCase,
 
                 ) as T
             }

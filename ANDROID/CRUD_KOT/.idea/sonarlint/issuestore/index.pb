@@ -15,7 +15,7 @@ Eapp/src/main/java/com/example/crud_project/ui/mainScreen/MainState.kt,5\c\5c19
 aapp/src/main/java/com/example/crud_project/domain/usecases/employees/GetEmployeeByIndexUseCase.kt,d\5\d522acaa135c0e848d406a87095a6f1d2eb1aebb
 s
 Capp/src/main/java/com/example/crud_project/domain/model/Employee.kt,4\c\4c82655d512bcfaa51033e29f48e9c82ab872a32
-x
-Happ/src/main/java/com/example/crud_project/ui/mainScreen/MainActivity.kt,d\a\dad046cdfd540e010d634a4da19a5a260b751486
 y
 Iapp/src/main/java/com/example/crud_project/ui/mainScreen/MainViewModel.kt,b\9\b93d42c4d165634003dac36192d35ab2a2f90152
+x
+Happ/src/main/java/com/example/crud_project/ui/mainScreen/MainActivity.kt,d\a\dad046cdfd540e010d634a4da19a5a260b751486
