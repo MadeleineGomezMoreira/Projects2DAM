@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             viewButton.setOnClickListener {
+                //I need this to cycle through the employees going from the last to the first
                 val actualEmployee : Employee = viewModel.getEmployeeIndex(etNumber.text.toString().toInt()-1)
 
                 changeEmployee(actualEmployee)
@@ -47,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             arrowLeftButton.setOnClickListener {
-
+                //I need this to cycle through the employees going from the last to the first and viceversa
                 val actualEmployee : Employee = viewModel.getEmployeeIndex(etNumber.text.toString().toInt()-1)
 
                 changeEmployee(actualEmployee)
