@@ -1,14 +1,3 @@
-<!DOCTYPE Dungeon [
-
-<!ELEMENT dungeon (room+)>
-<!ELEMENT room (door+, description)>
-<!ELEMENT door EMPTY >
-<!ELEMENT description (#PCDATA)>
-<!ATTLIST dungeon name CDATA #REQUIRED>
-<!ATTLIST room id ID #REQUIRED>
-<!ATTLIST door name CDATA #REQUIRED>
-<!ATTLIST door dest IDREF #REQUIRED>
-]>
 <dungeon>
 	<room id="R0">
 		<door name="Norte" dest="R1"/>

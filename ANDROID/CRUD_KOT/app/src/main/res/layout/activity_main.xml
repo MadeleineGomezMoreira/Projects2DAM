@@ -7,10 +7,10 @@
     tools:context=".ui.mainScreen.MainActivity">
 
     <Button
-        android:id="@+id/viewButton"
+        android:id="@+id/addButton"
         android:layout_width="118dp"
         android:layout_height="62dp"
-        android:text="@string/view"
+        android:text="@string/add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/arrowRightButton"
         app:layout_constraintStart_toEndOf="@id/arrowLeftButton"
@@ -18,14 +18,52 @@
         tools:layout_editor_absoluteX="146dp" />
 
     <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="59dp"
+        android:layout_height="70dp"
+        android:text="@string/delete"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/arrowRightButton"
+        app:layout_constraintHorizontal_bias="0.725"
+        app:layout_constraintStart_toEndOf="@id/arrowLeftButton"
+        app:layout_constraintTop_toBottomOf="@id/etNumber"
+        app:layout_constraintVertical_bias="0.509" />
+
+    <Button
+        android:id="@+id/viewButton"
+        android:layout_width="106dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="136dp"
+        android:text="@string/view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="59dp"
+        android:layout_height="70dp"
+        android:text="@string/update"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/arrowRightButton"
+        app:layout_constraintHorizontal_bias="0.274"
+        app:layout_constraintStart_toEndOf="@id/arrowLeftButton"
+        app:layout_constraintTop_toBottomOf="@id/etNumber"
+        app:layout_constraintVertical_bias="0.509" />
+
+    <Button
         android:id="@+id/arrowLeftButton"
         android:layout_width="75dp"
         android:layout_height="63dp"
         android:background="@drawable/arrow_left_bold_circle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/viewButton"
+        app:layout_constraintEnd_toStartOf="@id/addButton"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etNumber" />
+        app:layout_constraintTop_toBottomOf="@id/etNumber"
+        app:layout_constraintVertical_bias="0.503" />
 
     <Button
         android:id="@+id/arrowRightButton"
@@ -34,9 +72,10 @@
         android:background="@drawable/arrow_right_bold_circle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/viewButton"
-        app:layout_constraintTop_toBottomOf="@id/etNumber" />
-
+        app:layout_constraintHorizontal_bias="0.645"
+        app:layout_constraintStart_toEndOf="@id/addButton"
+        app:layout_constraintTop_toBottomOf="@id/etNumber"
+        app:layout_constraintVertical_bias="0.503" />
 
     <EditText
         android:id="@+id/etNumber"
@@ -46,7 +85,7 @@
         android:ems="10"
         android:hint="@string/index"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@id/viewButton"
+        app:layout_constraintBottom_toTopOf="@id/addButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etPhone" />

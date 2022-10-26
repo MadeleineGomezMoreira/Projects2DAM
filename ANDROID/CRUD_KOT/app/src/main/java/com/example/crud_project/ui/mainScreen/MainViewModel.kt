@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.crud_project.domain.model.Employee
+import com.example.crud_project.domain.usecases.employees.AddEmployeeUseCase
 import com.example.crud_project.domain.usecases.employees.GetEmployeeByIndexUseCase
 import com.example.crud_project.domain.usecases.employees.GetEmployeesUseCase
 import com.example.crud_project.utils.StringProvider
@@ -13,6 +14,7 @@ class MainViewModel(
     private val stringProvider: StringProvider,
     private val getEmployeeByIndexUseCase: GetEmployeeByIndexUseCase,
     private val getEmployeesUseCase: GetEmployeesUseCase,
+    private val addEmployeeUseCase: AddEmployeeUseCase,
 ) : ViewModel() {
     private val _uiState = MutableLiveData<MainState>()
     val uiState: LiveData<MainState> get() = _uiState
@@ -30,6 +32,10 @@ class MainViewModel(
         return employees
     }
 
+    fun addEmployee(employee: Employee){
+        addEmployeeUseCase(employee)
+    }
+
     fun errorMostrado() {
         _uiState.value = _uiState.value?.copy(error = null)
     }
@@ -38,6 +44,7 @@ class MainViewModel(
         private val stringProvider: StringProvider,
         private val getEmployeeByIndexUseCase: GetEmployeeByIndexUseCase,
         private val getEmployeesUseCase: GetEmployeesUseCase,
+        private val addEmployeeUseCase: AddEmployeeUseCase,
 
 
         ) : ViewModelProvider.Factory {
@@ -48,6 +55,7 @@ class MainViewModel(
                     stringProvider,
                     getEmployeeByIndexUseCase,
                     getEmployeesUseCase,
+                    addEmployeeUseCase,
 
                 ) as T
             }

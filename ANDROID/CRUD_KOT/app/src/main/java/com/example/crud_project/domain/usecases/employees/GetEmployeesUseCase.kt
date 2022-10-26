@@ -5,5 +5,5 @@ import com.example.crud_project.daoData.Repository
 class GetEmployeesUseCase {
 
     operator fun invoke() =
-        Repository.getInstance().getEmployees()
+        Repository.getEmployees()
 }

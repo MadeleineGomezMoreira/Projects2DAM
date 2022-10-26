@@ -3,12 +3,20 @@ package com.example.crud_project.daoData
 import android.os.Build
 import androidx.annotation.RequiresApi
 import com.example.crud_project.domain.model.Employee
+import android.util.Log
 
-class Repository {
+object Repository {
 
     private val employeeList = mutableListOf<Employee>()
 
     init {
+        populateList();
+    }
+
+    private val mapEmployees = mutableMapOf<String, Employee>()
+
+    //método para poblar la lista de empleados
+    fun populateList() {
         employeeList.add(Employee("Martha", "12642", "F", 1999, true, 916921723))
         employeeList.add(Employee("Sarah", "27432", "F", 2000, true, 916921724))
         employeeList.add(Employee("Lilith", "32108", "F", 2001, false, 916921725))
@@ -16,16 +24,16 @@ class Repository {
         employeeList.add(Employee("Isaac", "52037", "M", 1998, true, 916921727))
     }
 
-    private val mapEmployees = mutableMapOf<String, Employee>()
-
-    fun addEmployee(employee: Employee) =
+    fun addEmployee(employee: Employee) {
         employeeList.add(employee)
+        Log.d("addEmployee", employeeList.size.toString())
+    }
 
     fun getEmployees(): MutableList<Employee> {
         return employeeList
     }
 
-    fun removeEmployee(newEmployee: Employee) {
+    fun deleteEmployee(newEmployee: Employee) {
         employeeList.remove(newEmployee)
     }
 
@@ -63,13 +71,6 @@ class Repository {
         return employeeList[index]
     }
 
-    //Falta la función que hará que se muestre el empleado en el formulario según el index
-
-    companion object {
-
-        fun getInstance(): Repository = Repository()
-
-    }
 
 
 }

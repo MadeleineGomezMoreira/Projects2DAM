@@ -9,4 +9,7 @@
     <string name="phone">phone</string>
     <string name="gender">gender</string>
     <string name="birth_year">birth year</string>
+    <string name="delete">DELETE</string>
+    <string name="add">ADD</string>
+    <string name="update">UPDATE</string>
 </resources>

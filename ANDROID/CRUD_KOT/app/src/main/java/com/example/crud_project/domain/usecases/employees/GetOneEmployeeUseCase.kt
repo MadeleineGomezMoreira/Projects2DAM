@@ -8,6 +8,6 @@ class GetOneEmployeeUseCase {
 
     @RequiresApi(Build.VERSION_CODES.N)
     operator fun invoke(id : String) =
-        Repository.getInstance().getEmployee(id)
+        Repository.getEmployee(id)
 
 }
