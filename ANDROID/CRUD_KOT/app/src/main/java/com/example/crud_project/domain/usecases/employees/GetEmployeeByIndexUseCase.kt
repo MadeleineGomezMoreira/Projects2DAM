@@ -4,6 +4,6 @@ import com.example.crud_project.daoData.Repository
 
 class GetEmployeeByIndexUseCase {
 
-    operator fun invoke(index : Int) =
+    operator fun invoke(index: Int) =
         Repository.getEmployeeByIndex(index)
 }

@@ -5,9 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.crud_project.domain.model.Employee
-import com.example.crud_project.domain.usecases.employees.AddEmployeeUseCase
-import com.example.crud_project.domain.usecases.employees.GetEmployeeByIndexUseCase
-import com.example.crud_project.domain.usecases.employees.GetEmployeesUseCase
+import com.example.crud_project.domain.usecases.employees.*
 import com.example.crud_project.utils.StringProvider
 
 class MainViewModel(
@@ -15,28 +13,40 @@ class MainViewModel(
     private val getEmployeeByIndexUseCase: GetEmployeeByIndexUseCase,
     private val getEmployeesUseCase: GetEmployeesUseCase,
     private val addEmployeeUseCase: AddEmployeeUseCase,
-) : ViewModel() {
+    private val updateEmployeeUseCase: UpdateEmployeeUseCase,
+    private val deleteEmployeeUseCase: DeleteEmployeeUseCase,
+
+    ) : ViewModel() {
     private val _uiState = MutableLiveData<MainState>()
     val uiState: LiveData<MainState> get() = _uiState
 
-    fun getEmployeeIndex(index: Int) : Employee{
+    fun getEmployeeIndex(index: Int) {
         val employee = getEmployeeByIndexUseCase(index)
-            _uiState.value = MainState(
-                employee = employee
-            )
-        return employee
+        _uiState.value = MainState(
+            employee = employee
+        )
     }
 
-    fun getEmployees() : List<Employee>{
+    fun getListSize(): Int {
         val employees = getEmployeesUseCase()
-        return employees
+        return employees.size
     }
 
-    fun addEmployee(employee: Employee){
+    fun addEmployee(employee: Employee) {
         addEmployeeUseCase(employee)
     }
 
-    fun errorMostrado() {
+    fun deleteEmployee(index: Int) {
+        val employee = getEmployeeByIndexUseCase(index)
+        deleteEmployeeUseCase(employee)
+    }
+
+    fun updateEmployee(index: Int, newEmployee: Employee) {
+        val oldEmployee = getEmployeeByIndexUseCase(index)
+        updateEmployeeUseCase(oldEmployee, newEmployee)
+    }
+
+    fun shownError() {
         _uiState.value = _uiState.value?.copy(error = null)
     }
 
@@ -45,6 +55,8 @@ class MainViewModel(
         private val getEmployeeByIndexUseCase: GetEmployeeByIndexUseCase,
         private val getEmployeesUseCase: GetEmployeesUseCase,
         private val addEmployeeUseCase: AddEmployeeUseCase,
+        private val updateEmployeeUseCase: UpdateEmployeeUseCase,
+        private val deleteEmployeeUseCase: DeleteEmployeeUseCase,
 
 
         ) : ViewModelProvider.Factory {
@@ -56,15 +68,14 @@ class MainViewModel(
                     getEmployeeByIndexUseCase,
                     getEmployeesUseCase,
                     addEmployeeUseCase,
+                    updateEmployeeUseCase,
+                    deleteEmployeeUseCase,
 
-                ) as T
+                    ) as T
             }
             throw IllegalArgumentException("Unknown ViewModel class")
         }
     }
-
-
-    //cuando el usuario ponga el índex, de 1- lo que sea, se le mostrará el empleado
 
 
 }

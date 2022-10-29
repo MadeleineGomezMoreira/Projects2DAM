@@ -8,16 +8,16 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.crud_project.databinding.ActivityMainBinding
 import com.example.crud_project.domain.model.Employee
-import com.example.crud_project.domain.usecases.employees.AddEmployeeUseCase
-import com.example.crud_project.domain.usecases.employees.GetEmployeeByIndexUseCase
-import com.example.crud_project.domain.usecases.employees.GetEmployeesUseCase
+import com.example.crud_project.domain.usecases.employees.*
 import com.example.crud_project.utils.StringProvider
+import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    private var action : Int = 0;
+    private var action: Int = 0
 
     private val viewModel: MainViewModel by viewModels {
         MainViewModel.MainViewModelFactory(
@@ -25,7 +25,49 @@ class MainActivity : AppCompatActivity() {
             GetEmployeeByIndexUseCase(),
             GetEmployeesUseCase(),
             AddEmployeeUseCase(),
+            UpdateEmployeeUseCase(),
+            DeleteEmployeeUseCase(),
         )
+    }
+
+    //THIS WILL CHANGE THE BUTTONS BASED ON THE USERS ACTIONS - IT RUNS ALL THE TIME
+    private fun setActionButton() {
+        Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate({
+            runOnUiThread {
+                with(binding) {
+                    action = Constants.ACTION_CREATE
+
+                    //Function that changes buttons' visibility (CREATE or UPDATE + DELETE)
+                    fun actionButtonShow(action: Int) {
+                        when (action) {
+                            Constants.ACTION_CREATE -> {
+                                deleteButton.visibility = View.INVISIBLE
+                                updateButton.visibility = View.INVISIBLE
+                                addButton.visibility = View.VISIBLE
+                            }
+                            Constants.ACTION_UPDATE_DELETE -> {
+                                addButton.visibility = View.INVISIBLE
+                                deleteButton.visibility = View.VISIBLE
+                                updateButton.visibility = View.VISIBLE
+                            }
+                        }
+                    }
+
+                    //Function that determines current action based on whether the index field is empty or not
+                    fun determineAction(): Int {
+                        val result =
+                            if (textIndex.text.isNullOrBlank()) {
+                                Constants.ACTION_CREATE
+                            } else {
+                                Constants.ACTION_UPDATE_DELETE
+                            }
+                        return result
+                    }
+
+                    actionButtonShow(determineAction())
+                }
+            }
+        }, 0, 1, TimeUnit.SECONDS)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,128 +77,153 @@ class MainActivity : AppCompatActivity() {
             val view = root
             setContentView(view)
 
-            action = Constants.ACTION_CREATE
+            setActionButton()
 
-            fun actionButtonShow (action : Int){
-                when(action){
-                    Constants.ACTION_CREATE -> {
-                        deleteButton.visibility = View.INVISIBLE
-                        updateButton.visibility = View.INVISIBLE
-                        addButton.visibility = View.VISIBLE
-                    }
-                    Constants.ACTION_UPDATE_DELETE -> {
-                        addButton.visibility = View.INVISIBLE
-                        deleteButton.visibility = View.VISIBLE
-                        updateButton.visibility = View.VISIBLE
-                    }
-                }
-            }
+            //SHOW EMPLOYEE'S VALUES ON FIELDS
+            fun changeEmployee(employee: Employee) {
 
-            //How do I check this periodically after every action?
-            //Function that determines current action
-            fun determineAction() : Int{
-                var result : Int = 0
-                result = if(etName.text.isEmpty() && etPhone.text.isEmpty() && etBirthYear.text.isEmpty() && etId.text.isEmpty() && !activeSwitch.isChecked && genderChip.text.isEmpty()){
-                    Constants.ACTION_CREATE
-                } else {
-                    Constants.ACTION_UPDATE_DELETE
-                }
-                return result
-            }
-
-
-            fun changeEmployee(employee: Employee){
-                etName.setText(employee.name)
-                //This'll be useful in order to change a number value using setText (if we do it without the $, it'll be wrong)
-                etPhone.setText("${employee.phoneNumber}")
-                etBirthYear.setText("${employee.birthYear}")
-                etId.setText(employee.id)
+                textName.setText(employee.name)
+                textPhone.setText("${employee.phoneNumber}")
+                textBirthYear.setText("${employee.birthYear}")
+                textId.setText(employee.id)
                 activeSwitch.isChecked = employee.active
-                genderChip.setText(employee.gender)
+                genderChip.text = employee.gender
             }
-
 
             addButton.setOnClickListener {
 
-
-                val name = etName.text.toString()
-                val id = etId.text.toString()
+                val name = textName.text.toString()
+                val id = textId.text.toString()
                 val gender = "F"
-                val birthYear = etBirthYear.text.toString().toInt()
+                val birthYear = textBirthYear.text.toString().toInt()
                 val active = activeSwitch.isChecked
-                val phone = etPhone.text.toString().toInt()
+                val phone = textPhone.text.toString().toInt()
 
-                val employee = Employee(name,id,gender,birthYear,active,phone)
+                val employee = Employee(name, id, gender, birthYear, active, phone)
 
                 viewModel.addEmployee(employee)
                 Toast.makeText(this@MainActivity, Constants.ADDED, Toast.LENGTH_SHORT).show()
-
             }
 
-
-
-            viewButton.setOnClickListener {
-
-                val employees : List<Employee> = viewModel.getEmployees()
-                val index : Int = etNumber.text.toString().toInt()
-
+            deleteButton.setOnClickListener {
+                val index = textIndex.text.toString().toInt()
+                var employee: Employee
 
                 try {
-                        val actualEmployee : Employee = viewModel.getEmployeeIndex(index)
-                        changeEmployee(actualEmployee)
+                    viewModel.deleteEmployee(index)
 
+                    if (textIndex.text.toString().toInt() > viewModel.getListSize()) {
+                        textIndex.setText("${viewModel.getListSize()}")
+                    }
+                    viewModel.getEmployeeIndex(textIndex.text.toString().toInt())
+                    viewModel.uiState.observe(this@MainActivity) { state ->
+                        employee = state.employee
+                        changeEmployee(employee)
+                    }
+
+                    Toast.makeText(this@MainActivity, Constants.DELETED, Toast.LENGTH_SHORT).show()
+                } catch (e: Exception) {
+                    Toast.makeText(this@MainActivity, Constants.NOT_FOUND, Toast.LENGTH_SHORT)
+                        .show()
                 }
-                catch (e: java.lang.IndexOutOfBoundsException){
-                    Toast.makeText(this@MainActivity, Constants.ERROR, Toast.LENGTH_SHORT).show()
-                }
-
-                actionButtonShow(determineAction())
-
             }
 
+            updateButton.setOnClickListener {
+
+                val newEmployee = Employee(
+                    textName.text.toString(),
+                    textId.text.toString(),
+                    genderChip.text.toString(),
+                    textBirthYear.text.toString().toInt(),
+                    activeSwitch.isChecked,
+                    textPhone.text.toString().toInt()
+                )
+
+                val index = textIndex.text.toString().toInt()
+                viewModel.getEmployeeIndex(index)
+
+                viewModel.updateEmployee(index, newEmployee)
+
+                viewModel.getEmployeeIndex(textIndex.text.toString().toInt())
+
+                changeEmployee(newEmployee)
+
+
+                Toast.makeText(this@MainActivity, Constants.UPDATED, Toast.LENGTH_SHORT).show()
+            }
+
+            viewButton.setOnClickListener {
+                var employee: Employee
+                val index: Int = textIndex.text.toString().toInt()
+
+                if (!textIndex.text.isNullOrBlank()) {
+                    try {
+                        viewModel.getEmployeeIndex(index)
+                        viewModel.uiState.observe(this@MainActivity) { state ->
+                            employee = state.employee
+                            changeEmployee(employee)
+                        }
+
+                    } catch (e: java.lang.IndexOutOfBoundsException) {
+                        Toast.makeText(this@MainActivity, Constants.ERROR, Toast.LENGTH_SHORT)
+                            .show()
+                    }
+                } else {
+                    Toast.makeText(this@MainActivity, Constants.BLANK, Toast.LENGTH_SHORT)
+                        .show()
+                }
+            }
 
             arrowLeftButton.setOnClickListener {
 
-                //un try catch para que si no hay nada en index pues que no
-                // muestre nada o te ponga solo el numero 1 de index
-
-                val employees : List<Employee> = viewModel.getEmployees()
-                etNumber.setText("${etNumber.text.toString().toInt() - 1}")
-                println(employees.size.toString())
-                if(etNumber.text.toString().toInt()-1 < 0){
-                    etNumber.setText(employees.size.toString())
+                if (textIndex.text.toString().toInt() - 1 == 0) {
+                    textIndex.setText(viewModel.getListSize().toString())
+                } else {
+                    textIndex.setText("${textIndex.text.toString().toInt() - 1}")
                 }
 
-                val index : Int = etNumber.text.toString().toInt()-1
-                val actualEmployee : Employee = viewModel.getEmployeeIndex(index)
-                changeEmployee(actualEmployee)
+                val index: Int = textIndex.text.toString().toInt()
+                var nextEmployee: Employee
 
+                try {
+                    viewModel.getEmployeeIndex(index)
+                    viewModel.uiState.observe(this@MainActivity) { state ->
+                        nextEmployee = state.employee
+                        changeEmployee(nextEmployee)
+
+                    }
+                } catch (e: IndexOutOfBoundsException) {
+                    Toast.makeText(this@MainActivity, Constants.NOT_FOUND, Toast.LENGTH_SHORT)
+                        .show()
+                }
             }
 
             arrowRightButton.setOnClickListener {
 
-                val employees : List<Employee> = viewModel.getEmployees()
-                etNumber.setText("${etNumber.text.toString().toInt() + 1}")
-                if(etNumber.text.toString().toInt()-1 > employees.size-1){
+                if (textIndex.text.toString().toInt() + 1 > viewModel.getListSize()) {
 
-                    etNumber.setText(Constants.BASEVALUE)
+                    textIndex.setText(Constants.BASE_VALUE)
+                } else {
+                     val newText = "${textIndex.text.toString().toInt() + 1}"
+                    textIndex.setText(newText)
                 }
 
-                val index : Int = etNumber.text.toString().toInt()-1
-                val actualEmployee : Employee = viewModel.getEmployeeIndex(index)
-                changeEmployee(actualEmployee)
+                val index: Int = textIndex.text.toString().toInt()
+                var nextEmployee: Employee
 
+                try {
+                    viewModel.getEmployeeIndex(index)
+                    viewModel.uiState.observe(this@MainActivity) { state ->
+                        nextEmployee = state.employee
+                        changeEmployee(nextEmployee)
+
+                    }
+                } catch (e: IndexOutOfBoundsException) {
+                    Toast.makeText(this@MainActivity, Constants.NOT_FOUND, Toast.LENGTH_SHORT)
+                        .show()
+                }
             }
-
-
-
-
-
-
         }
     }
-
-
-
 }
 
