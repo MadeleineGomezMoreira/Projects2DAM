@@ -7,8 +7,6 @@ Bapp/src/main/java/com/example/crud_project/utils/StringProvider.kt,e\d\ed52f2e
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 u
 Eapp/src/main/java/com/example/crud_project/ui/mainScreen/Constants.kt,0\0\00ae4b8ae0c6490a297bb43b625ebafb489d5886
 y
@@ -25,9 +23,3 @@ s
 Capp/src/main/java/com/example/crud_project/domain/model/Employee.kt,4\c\4c82655d512bcfaa51033e29f48e9c82ab872a32
 
 ]app/src/main/java/com/example/crud_project/domain/usecases/employees/DeleteEmployeeUseCase.kt,2\0\200f84a00a506ce2f0c926c1df0d668eeb5fbdf3
-x
-Happ/src/main/java/com/example/crud_project/ui/mainScreen/MainActivity.kt,d\a\dad046cdfd540e010d634a4da19a5a260b751486
-p
-@app/src/main/java/com/example/crud_project/daoData/Repository.kt,2\2\22e3e0592cb71a9e83fcc93bcd785b08ec9e6d9d
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e

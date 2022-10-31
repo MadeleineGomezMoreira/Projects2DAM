@@ -15,6 +15,8 @@ import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
+    //TODO: error control on buttons when index is empty/blank
+
     private lateinit var binding: ActivityMainBinding
 
     private var action: Int = 0
