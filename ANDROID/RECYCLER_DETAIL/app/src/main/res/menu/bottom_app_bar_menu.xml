@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/deleteMenuItem"
+        android:id="@+id/appBarDelete"
         android:icon="@drawable/ic_baseline_delete_24"
         android:title="@string/delete"
         app:showAsAction="ifRoom"/>
 
     <item
-        android:id="@+id/editMenuItem"
+        android:id="@+id/appBarEdit"
         android:icon="@drawable/ic_baseline_edit_24"
         android:title="@string/edit"
         app:showAsAction="ifRoom"/>

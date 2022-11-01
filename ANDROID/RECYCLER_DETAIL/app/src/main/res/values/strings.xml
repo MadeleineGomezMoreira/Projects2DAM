@@ -2,4 +2,5 @@
     <string name="app_name">RecyclerDetail</string>
     <string name="delete">Delete</string>
     <string name="edit">Edit</string>
+    <string name="search">Search</string>
 </resources>
