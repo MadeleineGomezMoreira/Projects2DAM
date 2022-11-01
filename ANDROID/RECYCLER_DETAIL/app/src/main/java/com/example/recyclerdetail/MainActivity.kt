@@ -14,8 +14,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        setSupportActionBar(findViewById(R.id.bottomAppBar))
+        with(binding) {
+            setSupportActionBar(bottomAppBar)
+        }
+        //setSupportActionBar(findViewById(R.id.bottomAppBar))
 
 
     }
