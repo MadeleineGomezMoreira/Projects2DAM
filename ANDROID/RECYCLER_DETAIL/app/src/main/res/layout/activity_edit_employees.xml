@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.EditEmployeesActivity.EditEmployeesActivity">
+
+    <!-- TEXT BUTTONS -->
+
+    <Button
+        android:id="@+id/addButton"
+        style="@style/Widget.Material3.Button.IconButton.Filled"
+        android:layout_width="118dp"
+        android:layout_height="62dp"
+        android:text="@string/add"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/arrowRightButton"
+        app:layout_constraintStart_toEndOf="@id/arrowLeftButton"
+        app:layout_constraintTop_toBottomOf="@id/etNumber"
+        tools:layout_editor_absoluteX="146dp" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        style="@style/Widget.Material3.Button.IconButton.Filled"
+        android:layout_width="59dp"
+        android:layout_height="70dp"
+        android:text="@string/delete"
+        android:textSize="15sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/arrowRightButton"
+        app:layout_constraintHorizontal_bias="0.725"
+        app:layout_constraintStart_toEndOf="@id/arrowLeftButton"
+        app:layout_constraintTop_toBottomOf="@id/etNumber"
+        app:layout_constraintVertical_bias="0.509" />
+
+
+    <Button
+        android:id="@+id/viewButton"
+        style="@style/Widget.Material3.Button.IconButton.Filled"
+        android:layout_width="91dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="172dp"
+        android:text="@string/view"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/etNumber"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/updateButton"
+        style="@style/Widget.Material3.Button.IconButton.Filled"
+        android:layout_width="59dp"
+        android:layout_height="70dp"
+        android:text="@string/update"
+        android:textSize="15sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/arrowRightButton"
+        app:layout_constraintHorizontal_bias="0.274"
+        app:layout_constraintStart_toEndOf="@id/arrowLeftButton"
+        app:layout_constraintTop_toBottomOf="@id/etNumber"
+        app:layout_constraintVertical_bias="0.509" />
+
+    <!-- ARROW BUTTONS -->
+
+    <Button
+        android:id="@+id/arrowLeftButton"
+        android:layout_width="75dp"
+        android:layout_height="63dp"
+        android:background="@drawable/arrow_left_bold_circle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/addButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etNumber"
+        app:layout_constraintVertical_bias="0.503" />
+
+    <Button
+        android:id="@+id/arrowRightButton"
+        android:layout_width="75dp"
+        android:layout_height="63dp"
+        android:background="@drawable/arrow_right_bold_circle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.645"
+        app:layout_constraintStart_toEndOf="@id/addButton"
+        app:layout_constraintTop_toBottomOf="@id/etNumber"
+        app:layout_constraintVertical_bias="0.503" />
+
+    <!-- INPUT FIELDS -->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etNumber"
+        android:layout_width="170dp"
+        android:layout_height="55dp"
+        android:hint="@string/index"
+        app:layout_constraintBottom_toTopOf="@id/addButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etPhone">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textIndex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etName"
+        android:layout_width="170dp"
+        android:layout_height="55dp"
+        android:hint="@string/name"
+        app:layout_constraintBottom_toTopOf="@id/etId"
+        app:layout_constraintEnd_toStartOf="@id/genderChip"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="textPersonName" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etId"
+        android:layout_width="170dp"
+        android:layout_height="55dp"
+        android:hint="@string/id"
+        app:layout_constraintBottom_toTopOf="@id/etBirthYear"
+        app:layout_constraintEnd_toStartOf="@id/activeSwitch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etBirthYear"
+        android:layout_width="170dp"
+        android:layout_height="55dp"
+        android:hint="@string/birth_year"
+        app:layout_constraintBottom_toTopOf="@id/etPhone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etId">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textBirthYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etPhone"
+        android:layout_width="170dp"
+        android:layout_height="55dp"
+        android:hint="@string/phone"
+        app:layout_constraintBottom_toTopOf="@id/etNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etBirthYear">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="phone" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- CHIP AND SWITCH -->
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/activeSwitch"
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:text="@string/active"
+        app:layout_constraintBottom_toTopOf="@id/etBirthYear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/etId"
+        app:layout_constraintTop_toBottomOf="@id/genderChip" />
+
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/genderChip"
+        android:layout_width="88dp"
+        android:layout_height="55dp"
+        app:layout_constraintBottom_toTopOf="@id/activeSwitch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/etName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,4 @@
 
-r
-Bapp/src/main/java/com/example/crud_project/utils/StringProvider.kt,e\d\ed52f2eba405349362ee2a9d288d6d7e441cce00
 ç
 ]app/src/main/java/com/example/crud_project/domain/usecases/employees/UpdateEmployeeUseCase.kt,2\8\288c430ed0939e24705c7ebcbd0f411233f45c14
 ?
@@ -9,17 +7,11 @@ Bapp/src/main/java/com/example/crud_project/utils/StringProvider.kt,e\d\ed52f2e
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 u
 Eapp/src/main/java/com/example/crud_project/ui/mainScreen/Constants.kt,0\0\00ae4b8ae0c6490a297bb43b625ebafb489d5886
-y
-Iapp/src/main/java/com/example/crud_project/ui/mainScreen/MainViewModel.kt,b\9\b93d42c4d165634003dac36192d35ab2a2f90152
-u
-Eapp/src/main/java/com/example/crud_project/ui/mainScreen/MainState.kt,5\c\5c1914bca089f298b9b905df36420d7e3769676e
 ë
 aapp/src/main/java/com/example/crud_project/domain/usecases/employees/GetEmployeeByIndexUseCase.kt,d\5\d522acaa135c0e848d406a87095a6f1d2eb1aebb
 ã
 [app/src/main/java/com/example/crud_project/domain/usecases/employees/GetEmployeesUseCase.kt,f\c\fcf6cf1a52fd6689710c88007ed557aac519cf2a
 ä
 Zapp/src/main/java/com/example/crud_project/domain/usecases/employees/AddEmployeeUseCase.kt,b\c\bcebb83324ec94cd807915cb01ad2ac0790c9f45
-s
-Capp/src/main/java/com/example/crud_project/domain/model/Employee.kt,4\c\4c82655d512bcfaa51033e29f48e9c82ab872a32
 ç
 ]app/src/main/java/com/example/crud_project/domain/usecases/employees/DeleteEmployeeUseCase.kt,2\0\200f84a00a506ce2f0c926c1df0d668eeb5fbdf3

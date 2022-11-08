@@ -1,5 +1,3 @@
 
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
-l
-<app/src/main/java/com/example/recyclerdetail/MainActivity.kt,c\1\c146e834c2c7a78ca853a5d9aec5487e6f882703
+…
+Uapp/src/main/java/com/example/recyclerdetail/ui/mainActivity/MainActivityViewModel.kt,3\d\3dbf85c3c8ad3d200ed50e5c7734d3a366bf8720
