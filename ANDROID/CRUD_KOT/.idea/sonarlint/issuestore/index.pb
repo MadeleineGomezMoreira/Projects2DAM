@@ -15,3 +15,15 @@ aapp/src/main/java/com/example/crud_project/domain/usecases/employees/GetEmploye
 Zapp/src/main/java/com/example/crud_project/domain/usecases/employees/AddEmployeeUseCase.kt,b\c\bcebb83324ec94cd807915cb01ad2ac0790c9f45
 ç
 ]app/src/main/java/com/example/crud_project/domain/usecases/employees/DeleteEmployeeUseCase.kt,2\0\200f84a00a506ce2f0c926c1df0d668eeb5fbdf3
+u
+Eapp/src/main/java/com/example/crud_project/ui/mainScreen/MainState.kt,5\c\5c1914bca089f298b9b905df36420d7e3769676e
+y
+Iapp/src/main/java/com/example/crud_project/ui/mainScreen/MainViewModel.kt,b\9\b93d42c4d165634003dac36192d35ab2a2f90152
+p
+@app/src/main/java/com/example/crud_project/daoData/Repository.kt,2\2\22e3e0592cb71a9e83fcc93bcd785b08ec9e6d9d
+r
+Bapp/src/main/java/com/example/crud_project/utils/StringProvider.kt,e\d\ed52f2eba405349362ee2a9d288d6d7e441cce00
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+x
+Happ/src/main/java/com/example/crud_project/ui/mainScreen/MainActivity.kt,d\a\dad046cdfd540e010d634a4da19a5a260b751486

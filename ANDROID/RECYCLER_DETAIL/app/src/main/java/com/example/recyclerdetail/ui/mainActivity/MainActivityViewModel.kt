@@ -7,14 +7,16 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.recyclerdetail.domain.model.Employee
 import com.example.recyclerdetail.domain.usecases.employees.*
+import com.example.recyclerdetail.ui.mainActivity.MainActivity
 import com.example.recyclerdetail.ui.mainActivity.MainState
 
-class MainViewModel(
+class MainActivityViewModel(
     private val stringProvider: StringProvider,
     private val getEmployeeByIndexUseCase: GetEmployeeByIndexUseCase,
     private val getEmployeesUseCase: GetEmployeesUseCase,
     private val addEmployeeUseCase: AddEmployeeUseCase,
     private val deleteEmployeeUseCase: DeleteEmployeeUseCase,
+    private val getEmployeeByIdUseCase: GetEmployeeByIdUseCase,
 
     ) : ViewModel() {
     private val _uiState = MutableLiveData<MainState>()
@@ -46,41 +48,34 @@ class MainViewModel(
         addEmployeeUseCase(employee)
     }
 
-    fun deleteEmployee(index: Int) {
-        val employee = getEmployeeByIndexUseCase(index)
+    fun deleteEmployee(employee: Employee) {
         deleteEmployeeUseCase(employee)
     }
-
-    /*
-
-    fun updateEmployee(index: Int, newEmployee: Employee) {
-        val oldEmployee = getEmployeeByIndexUseCase(index)
-        updateEmployeeUseCase(oldEmployee, newEmployee)
-    }
-     */
 
     fun shownError() {
         _uiState.value = _uiState.value?.copy(error = null)
     }
 
-    class MainViewModelFactory(
+    class MainActivityViewModelFactory(
         private val stringProvider: StringProvider,
         private val getEmployeeByIndexUseCase: GetEmployeeByIndexUseCase,
         private val getEmployeesUseCase: GetEmployeesUseCase,
         private val addEmployeeUseCase: AddEmployeeUseCase,
         private val deleteEmployeeUseCase: DeleteEmployeeUseCase,
+        private val getEmployeeByIdUseCase: GetEmployeeByIdUseCase,
 
 
         ) : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
+            if (modelClass.isAssignableFrom(MainActivityViewModel::class.java)) {
                 @Suppress("UNCHECKED_CAST")
-                return MainViewModel(
+                return MainActivityViewModel(
                     stringProvider,
                     getEmployeeByIndexUseCase,
                     getEmployeesUseCase,
                     addEmployeeUseCase,
                     deleteEmployeeUseCase,
+                    getEmployeeByIdUseCase,
 
                     ) as T
             }

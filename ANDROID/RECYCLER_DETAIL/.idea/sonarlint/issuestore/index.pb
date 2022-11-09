@@ -1,3 +1,25 @@
 
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+y
+Iapp/src/main/java/com/example/recyclerdetail/ui/mainActivity/MainState.kt,5\3\53c156c1069c3f1127e70bc0ddfa6950851a1dda
+ã
+[app/src/main/java/com/example/recyclerdetail/ui/editEmployeesActivity/EditEmployeesState.kt,b\f\bfeaf5e8e544b45076b744560c91552aa25d26a4
+ì
+capp/src/main/java/com/example/recyclerdetail/domain/usecases/employees/GetEmployeeByIndexUseCase.kt,3\b\3b9a1e68b6c0a0c464921f3a4ebc5de830764eb8
+ê
+`app/src/main/java/com/example/recyclerdetail/domain/usecases/employees/GetEmployeeByIdUseCase.kt,a\5\a52b3e9494db941f47f086464e2046bf90f74ae5
+r
+Bapp/src/main/java/com/example/recyclerdetail/daoData/Repository.kt,1\9\198b5c820d554136a5568ac7c929ebe49d469bab
+è
+_app/src/main/java/com/example/recyclerdetail/domain/usecases/employees/UpdateEmployeeUseCase.kt,e\7\e792c82c146bafe3ad4065a3a74523e8b9b2d405
+è
+_app/src/main/java/com/example/recyclerdetail/ui/editEmployeesActivity/EditEmployeesViewModel.kt,c\9\c97ee6df9134d09ae92c8ed8d9345742bf838357
 Ö
 Uapp/src/main/java/com/example/recyclerdetail/ui/mainActivity/MainActivityViewModel.kt,3\d\3dbf85c3c8ad3d200ed50e5c7734d3a366bf8720
+s
+Capp/src/main/java/com/example/recyclerdetail/ui/AdapterEmployees.kt,3\5\35cd85417a4c9bffa40d6bcfd8c86a33d91a9290
+é
+^app/src/main/java/com/example/recyclerdetail/ui/editEmployeesActivity/EditEmployeesActivity.kt,8\3\83cac06deff7084ec6c8dbd5af0a155443a249c2
+|
+Lapp/src/main/java/com/example/recyclerdetail/ui/mainActivity/MainActivity.kt,9\d\9d11c7a1ff4d26e6c9a823c9847cc8f2a32984f6

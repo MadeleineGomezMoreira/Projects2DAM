@@ -1,6 +1,8 @@
 package com.example.recyclerdetail.daoData
 
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import com.example.recyclerdetail.domain.model.Employee
 
 object Repository {
@@ -20,6 +22,7 @@ object Repository {
         employeeList.add(Employee("Lilith", "32108", "F", 2001, false, 916921725))
         employeeList.add(Employee("Jacob", "43473", "M", 1997, false, 916921726))
         employeeList.add(Employee("Isaac", "52037", "M", 1998, true, 916921727))
+        employeeList.add(Employee("Samantha", "72022", "F", 1988, true, 916921728))
     }
 
     fun addEmployee(employee: Employee) {
@@ -35,14 +38,18 @@ object Repository {
 
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
     fun updateEmployee(oldEmployee: Employee, newEmployee: Employee) {
-        employeeList.remove(oldEmployee)
-        employeeList.add(newEmployee)
-
+        employeeList.replaceAll { if (it.id == oldEmployee.id) newEmployee else it }
     }
 
     fun getEmployeeByIndex(index: Int): Employee {
         return employeeList[index - 1]
+    }
+
+    @RequiresApi(Build.VERSION_CODES.N)
+    fun getEmployeeById(id: String): Employee {
+        return employeeList.stream().filter { e -> e.id == id }.findFirst().get()
     }
 
 

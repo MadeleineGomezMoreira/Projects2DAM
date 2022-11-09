@@ -13,7 +13,7 @@ import com.example.recyclerdetail.databinding.ActivityMainBinding
 import com.example.recyclerdetail.domain.model.Employee
 import com.example.recyclerdetail.domain.usecases.employees.*
 import com.example.recyclerdetail.ui.AdapterEmployees
-import com.example.recyclerdetail.ui.MainViewModel
+import com.example.recyclerdetail.ui.MainActivityViewModel
 import com.example.recyclerdetail.utils.StringProvider
 import com.google.android.material.snackbar.Snackbar
 
@@ -21,13 +21,14 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    private val viewModel: MainViewModel by viewModels {
-        MainViewModel.MainViewModelFactory(
+    private val viewModel: MainActivityViewModel by viewModels {
+        MainActivityViewModel.MainActivityViewModelFactory(
             StringProvider.instance(this),
             GetEmployeeByIndexUseCase(),
             GetEmployeesUseCase(),
             AddEmployeeUseCase(),
             DeleteEmployeeUseCase(),
+            GetEmployeeByIdUseCase(),
         )
     }
 
@@ -52,21 +53,19 @@ class MainActivity : AppCompatActivity() {
             }
 
             val recyclerEmployees: RecyclerView = recycler
-            val adapter = AdapterEmployees(list, onSelect = { employee ->
-                Snackbar.make(view, "Selected ${employee.name}", Snackbar.LENGTH_SHORT).show()
-            })
+            val adapter = AdapterEmployees(list)
 
             list.let {
                 recyclerEmployees.adapter = adapter
                 recyclerEmployees.layoutManager = LinearLayoutManager(this@MainActivity)
             }
 
-            //TODO: se ve cada card como la pantalla entera lmao + no shading ???
-
             //TODO: find a way to refresh list after adding a new employee
             fab.setOnClickListener {
                 try {
-                    //EditEmployee
+                    //Add new employee
+                    val defaultEmployee = Employee("New Employee", "0", "0", 0, false, 0)
+                    viewModel.addEmployee(defaultEmployee)
                     Snackbar.make(view, "Go EditScreen", Snackbar.LENGTH_SHORT).show()
                 } catch (e: Exception) {
                     e.printStackTrace()
@@ -79,27 +78,15 @@ class MainActivity : AppCompatActivity() {
                 when (item.itemId) {
                     R.id.appBarDelete -> {
                         try {
-                            /*
-                            viewModel.deleteEmployee(list.last())
-                             */
-                            Snackbar.make(view, "Last Employee Deleted", Snackbar.LENGTH_SHORT)
+                            adapter.selectedEmployees?.forEach {
+                                viewModel.deleteEmployee(it)
+                            }
+                            adapter.notifyDataSetChanged();
+                            Snackbar.make(view, "Employee Deleted", Snackbar.LENGTH_SHORT)
                                 .show()
                         } catch (e: Exception) {
                             e.printStackTrace()
                             Snackbar.make(view, "Error deleting employee", Snackbar.LENGTH_SHORT)
-                                .show()
-                        }
-                        true
-                    }
-                    R.id.appBarAdd -> {
-                        try {
-                            val defaultEmployee =
-                                Employee("New Employee", "666", "F", 6666, true, 666666666)
-                            viewModel.addEmployee(defaultEmployee)
-                            Snackbar.make(view, "New Employee Added", Snackbar.LENGTH_SHORT).show()
-                        } catch (e: Exception) {
-                            e.printStackTrace()
-                            Snackbar.make(view, "Error adding employee", Snackbar.LENGTH_SHORT)
                                 .show()
                         }
                         true
