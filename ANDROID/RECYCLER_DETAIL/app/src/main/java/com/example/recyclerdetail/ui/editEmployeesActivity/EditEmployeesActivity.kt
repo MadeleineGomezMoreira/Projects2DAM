@@ -34,7 +34,7 @@ class EditEmployeesActivity : AppCompatActivity() {
 
         binding = ActivityEditEmployeesBinding.inflate(layoutInflater).apply {
 
-            var employee: Employee = Employee("0", "0", "0", 0, false, 0)
+            var employee = Employee("0", "0", "0", 0, false, 0)
             val view = root
             setContentView(view)
 

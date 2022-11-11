@@ -8,8 +8,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.recyclerdetail.domain.model.Employee
 import com.example.recyclerdetail.domain.usecases.employees.*
-import com.example.recyclerdetail.ui.MainActivityViewModel
-import com.example.recyclerdetail.ui.editEmployeesActivity.EditEmployeesState
 import com.example.recyclerdetail.utils.StringProvider
 
 class EditEmployeesViewModel(

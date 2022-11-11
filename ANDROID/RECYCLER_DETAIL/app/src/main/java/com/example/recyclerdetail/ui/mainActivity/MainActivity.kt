@@ -13,13 +13,13 @@ import com.example.recyclerdetail.databinding.ActivityMainBinding
 import com.example.recyclerdetail.domain.model.Employee
 import com.example.recyclerdetail.domain.usecases.employees.*
 import com.example.recyclerdetail.ui.AdapterEmployees
-import com.example.recyclerdetail.ui.MainActivityViewModel
 import com.example.recyclerdetail.utils.StringProvider
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
 
     private val viewModel: MainActivityViewModel by viewModels {
         MainActivityViewModel.MainActivityViewModelFactory(
@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity() {
 
             var list: List<Employee>
 
+
             //TODO: change this (can't use repository directly) !!!!!!
             list = Repository.getEmployees()
 
@@ -66,22 +67,22 @@ class MainActivity : AppCompatActivity() {
                     //Add new employee
                     val defaultEmployee = Employee("New Employee", "0", "0", 0, false, 0)
                     viewModel.addEmployee(defaultEmployee)
-                    Snackbar.make(view, "Go EditScreen", Snackbar.LENGTH_SHORT).show()
+                    Snackbar.make(view, "Employee added", Snackbar.LENGTH_SHORT).show()
                 } catch (e: Exception) {
                     e.printStackTrace()
-                    Snackbar.make(view, "Error going EditScreen", Snackbar.LENGTH_SHORT).show()
+                    Snackbar.make(view, "Error adding new employee", Snackbar.LENGTH_SHORT).show()
                 }
             }
 
             //TODO: fix these methods uwu
-            bottomAppBar.setOnMenuItemClickListener() { item: MenuItem ->
+            bottomAppBar.setOnMenuItemClickListener { item: MenuItem ->
                 when (item.itemId) {
                     R.id.appBarDelete -> {
                         try {
                             adapter.selectedEmployees?.forEach {
                                 viewModel.deleteEmployee(it)
                             }
-                            adapter.notifyDataSetChanged();
+                            adapter.notifyDataSetChanged()
                             Snackbar.make(view, "Employee Deleted", Snackbar.LENGTH_SHORT)
                                 .show()
                         } catch (e: Exception) {
@@ -104,5 +105,23 @@ class MainActivity : AppCompatActivity() {
 
         return true
     }
+
+    /*
+    override fun onSaveInstanceState(outState: Bundle) { // Here You have to save count value
+        super.onSaveInstanceState(outState)
+        Timber.i("onSaveInstanceState")
+
+        outState.putInt("COUNT_KEY", temp)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) { // Here You have to restore count value
+        super.onRestoreInstanceState(savedInstanceState)
+        Timber.tag("::MyTag").i("onRestoreInstanceState")
+        // Log.i("::MyTag", "onRestoreInstanceState")
+
+        temp = savedInstanceState.getInt("COUNT_KEY")
+    }
+
+     */
 
 }

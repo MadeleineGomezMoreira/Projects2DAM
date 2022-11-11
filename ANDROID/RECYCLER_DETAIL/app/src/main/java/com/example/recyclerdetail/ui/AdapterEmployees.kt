@@ -2,11 +2,9 @@ package com.example.recyclerdetail.ui
 
 import android.content.Intent
 import android.graphics.Color
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerdetail.R
@@ -14,7 +12,7 @@ import com.example.recyclerdetail.databinding.EmployeeCardBinding
 import com.example.recyclerdetail.domain.model.Employee
 import com.example.recyclerdetail.ui.editEmployeesActivity.EditEmployeesActivity
 import com.google.android.material.snackbar.Snackbar
-import kotlin.coroutines.coroutineContext
+import timber.log.Timber
 
 class AdapterEmployees(
     private var employees: List<Employee>,
@@ -25,7 +23,8 @@ class AdapterEmployees(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EmployeeViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
 
-        Log.d("Adapter", "onCreateViewHolder")
+
+        Timber.tag("Adapter").d("onCreateViewHolder")
 
         return EmployeeViewHolder(layoutInflater.inflate(R.layout.employee_card, parent, false))
 
@@ -49,6 +48,9 @@ class EmployeeViewHolder(private val view: View) : RecyclerView.ViewHolder(view)
     val binding = EmployeeCardBinding.bind(view)
 
     fun render(employee: Employee, selectedEmployees: List<Employee>?) {
+
+        //for onSaveInstanceState ???? look for explanations on this
+        var temp: Int = 0
 
         with(binding) {
             tvEmployeeName.text = employee.name
@@ -76,6 +78,7 @@ class EmployeeViewHolder(private val view: View) : RecyclerView.ViewHolder(view)
             }
 
             cardView.setOnClickListener() {
+                temp++
                 Snackbar.make(it, "Click en ${employee.name}", Snackbar.LENGTH_SHORT).show()
 
                 val intent = Intent(view.context, EditEmployeesActivity::class.java)

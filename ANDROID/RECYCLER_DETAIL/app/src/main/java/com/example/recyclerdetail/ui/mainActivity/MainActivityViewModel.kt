@@ -1,4 +1,4 @@
-package com.example.recyclerdetail.ui
+package com.example.recyclerdetail.ui.mainActivity
 
 import com.example.recyclerdetail.utils.StringProvider
 import androidx.lifecycle.LiveData
@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.recyclerdetail.domain.model.Employee
 import com.example.recyclerdetail.domain.usecases.employees.*
-import com.example.recyclerdetail.ui.mainActivity.MainActivity
 import com.example.recyclerdetail.ui.mainActivity.MainState
 
 class MainActivityViewModel(
@@ -37,11 +36,6 @@ class MainActivityViewModel(
         _uiState.value = MainState(
             employeeList = employeeList
         )
-    }
-
-    fun getListSize(): Int {
-        val employees = getEmployeesUseCase()
-        return employees.size
     }
 
     fun addEmployee(employee: Employee) {
