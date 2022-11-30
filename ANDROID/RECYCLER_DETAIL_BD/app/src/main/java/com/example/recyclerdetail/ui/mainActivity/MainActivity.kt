@@ -8,7 +8,7 @@ import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerdetail.R
-import com.example.recyclerdetail.daoData.Repository
+import com.example.recyclerdetail.data.Repository
 import com.example.recyclerdetail.databinding.ActivityMainBinding
 import com.example.recyclerdetail.domain.model.Employee
 import com.example.recyclerdetail.domain.usecases.employees.*

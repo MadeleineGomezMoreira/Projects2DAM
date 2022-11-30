@@ -1,0 +1,43 @@
+
+x
+java:S1192ù"\Define a constant instead of duplicating this literal "Tree.rendererFillBackground" 3 times.(ù„ô‘ıÿÿÿÿ
+r
+java:S1104&"WMake xmlDocument a static final constant or non-public and provide accessors if needed.(ıÿé¦şÿÿÿÿ
+i
+java:S1104("SMake dungeon a static final constant or non-public and provide accessors if needed.(ûŒà¨
+m
+java:S1104,"XMake jMazmorraLog a static final constant or non-public and provide accessors if needed.(ë¹|
+y
+java:S1104-"\Make dungeonXMLLoader a static final constant or non-public and provide accessors if needed.(‰ñ­»8¾â¾×Ê0
+v
+java:S1104."YMake jMazmorraTree a static final constant or non-public and provide accessors if needed.(˜…Ö8úÃ×Ê0
+L
+java:S1444&"1Make this "public static xmlDocument" field final(ıÿé¦şÿÿÿÿ
+C
+java:S1444("-Make this "public static dungeon" field final(ûŒà¨
+G
+java:S1444,"2Make this "public static jMazmorraLog" field final(ë¹|
+S
+java:S1444-"6Make this "public static dungeonXMLLoader" field final(‰ñ­»8¾â¾×Ê0
+P
+java:S1444."3Make this "public static jMazmorraTree" field final(˜…Ö8ûÃ×Ê0
+Q	java:S125+"<This block of commented-out lines of code should be removed.(„Šı
+B
+java:S1172k",Remove this unused method parameter "pCell".(Ğàèæ
+V	java:S125w"<This block of commented-out lines of code should be removed.(›ÿÀîûÿÿÿÿ
+H
+java:S1135v"2Complete the task associated to this TODO comment.(öŸŞò
+H
+java:S1135x"2Complete the task associated to this TODO comment.(öŸŞò
+i
+java:S3776‚"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(ø­ı–
+Q	java:S125–"<This block of commented-out lines of code should be removed.(ÌîÏ-
+R	java:S125"<This block of commented-out lines of code should be removed.(‘ÊæÖ
+W	java:S125Ñ"<This block of commented-out lines of code should be removed.(‘„™¿úÿÿÿÿ
+N
+java:S6126ğ"2Replace this String concatenation with Text block.(“Óµıÿÿÿÿ
+P
+java:S1172‹"4Remove this unused method parameter "treeViewPanel".(»™‰Ÿúÿÿÿÿ
+T	java:S106˜"9Replace this use of System.out or System.err by a logger.(±ô¸ìùÿÿÿÿ
+u
+java:S1171ğ"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ

@@ -1,73 +1,124 @@
 package com.example.recyclerdetail.ui.mainActivity
 
+import androidx.lifecycle.*
 import com.example.recyclerdetail.utils.StringProvider
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import com.example.recyclerdetail.domain.model.Employee
 import com.example.recyclerdetail.domain.usecases.employees.*
+import kotlinx.coroutines.launch
 
 class MainActivityViewModel(
     private val stringProvider: StringProvider,
-    private val getEmployeeByIndexUseCase: GetEmployeeByIndexUseCase,
-    private val getEmployeesUseCase: GetEmployeesUseCase,
-    private val addEmployeeUseCase: AddEmployeeUseCase,
-    private val deleteEmployeeUseCase: DeleteEmployeeUseCase,
-    private val getEmployeeByIdUseCase: GetEmployeeByIdUseCase,
+    private val getEmployees: GetEmployees,
+    private val insertEmployeeWithThings: InsertEmployeeWithThings,
+    private val getEmployeesDes: GetEmployeesDes,
+    private val insertEmployee: InsertEmployee,
 
     ) : ViewModel() {
+
+    private val _employees = MutableLiveData<List<Employee>>()
+    val employees: LiveData<List<Employee>> get() = _employees
+
+    private val _error = MutableLiveData<String>()
+    val error: LiveData<String> get() = _error
+
     private val _uiState = MutableLiveData<MainState>()
     val uiState: LiveData<MainState> get() = _uiState
 
-
-    fun getEmployeeList() {
-        val employeeList = getEmployeesUseCase()
-        _uiState.value = MainState(
-            employeeList = employeeList
-        )
+    init {
+        getEmployees()
     }
 
-    fun addEmployee(employee: Employee) {
-        addEmployeeUseCase(employee)
-    }
-
-    fun deleteEmployee(employee: Employee) {
-        deleteEmployeeUseCase(employee)
-    }
-
-    fun shownError() {
-        _uiState.value = _uiState.value?.copy(error = null)
-    }
-
-    class MainActivityViewModelFactory(
-        private val stringProvider: StringProvider,
-        private val getEmployeeByIndexUseCase: GetEmployeeByIndexUseCase,
-        private val getEmployeesUseCase: GetEmployeesUseCase,
-        private val addEmployeeUseCase: AddEmployeeUseCase,
-        private val deleteEmployeeUseCase: DeleteEmployeeUseCase,
-        private val getEmployeeByIdUseCase: GetEmployeeByIdUseCase,
-
-
-        ) : ViewModelProvider.Factory {
-        override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            if (modelClass.isAssignableFrom(MainActivityViewModel::class.java)) {
-                @Suppress("UNCHECKED_CAST")
-                return MainActivityViewModel(
-                    stringProvider,
-                    getEmployeeByIndexUseCase,
-                    getEmployeesUseCase,
-                    addEmployeeUseCase,
-                    deleteEmployeeUseCase,
-                    getEmployeeByIdUseCase,
-
-                    ) as T
+    private fun getEmployees() {
+        viewModelScope.launch {
+            try {
+                _employees.value = getEmployees.invoke()
+                _uiState.value = MainState(getEmployees.invoke())
+            } catch (e: Exception) {
+                _uiState.value = _uiState.value?.copy(error = e.message)
             }
-            throw IllegalArgumentException("Unknown ViewModel class")
         }
     }
 
+    // TODO: fix handle events method
 
+    /*
+    fun handleEvent(event: MainEvent) {
+        when (event) {
+            MainEvent.GetEmployees -> {
+                getEmployees
+            }
+            MainEvent.InsertEmployee -> {
+                insertEmployeeWithThings(event.employee!!)
+                getEmployees
+            }
+            MainEvent.ErrorShown -> _uiState.value = _uiState.value?.copy(error = null)
+            is MainEvent.GetEmployeeById -> {
+            }
+        }
+    }
+
+     */
+
+    private fun getEmployeesDes() {
+        viewModelScope.launch {
+            val employees = getEmployeesDes.invoke()
+            _employees.value = employees
+            _uiState.value = MainState(getEmployees.invoke())
+
+        }
+    }
+
+    private fun insertEmployee(employee: Employee) {
+        viewModelScope.launch {
+            _uiState.value = MainState(isLoading = true)
+            insertEmployee.invoke(employee)
+        }
+    }
+
+    private fun insertEmployeeWithThings(employee: Employee) {
+        viewModelScope.launch {
+            try {
+                insertEmployee.invoke(employee)
+                _uiState.value =
+                    _uiState.value?.copy(employeeList = getEmployees.invoke()) ?: MainState(
+                        employeeList = getEmployees.invoke()
+                    )
+            } catch (e: Exception) {
+                _error.value = e.message
+                _uiState.value = _uiState.value?.copy(error = e.message)
+            }
+        }
+
+        fun shownError() {
+            _uiState.value = _uiState.value?.copy(error = null)
+        }
+
+
+        /**
+         * Factory class to instantiate the [ViewModel] instance.
+         */
+        class MainActivityViewModelFactory(
+            private val stringProvider: StringProvider,
+            private val getEmployees: GetEmployees,
+            private val insertEmployeeWithThings: InsertEmployeeWithThings,
+            private val getEmployeesDes: GetEmployeesDes,
+            private val insertEmployee: InsertEmployee,
+        ) : ViewModelProvider.Factory {
+            override fun <T : ViewModel> create(modelClass: Class<T>): T {
+                if (modelClass.isAssignableFrom(MainActivityViewModel::class.java)) {
+                    @Suppress("UNCHECKED_CAST")
+                    return MainActivityViewModel(
+                        stringProvider,
+                        getEmployees,
+                        insertEmployeeWithThings,
+                        getEmployeesDes,
+                        insertEmployee,
+                    ) as T
+                }
+                throw IllegalArgumentException("Unknown ViewModel class")
+            }
+        }
+    }
 }
 
 

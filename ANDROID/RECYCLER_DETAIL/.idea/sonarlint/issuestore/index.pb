@@ -13,10 +13,14 @@ _app/src/main/java/com/example/recyclerdetail/domain/usecases/employees/DeleteEm
 capp/src/main/java/com/example/recyclerdetail/domain/usecases/employees/GetEmployeeByIndexUseCase.kt,3\b\3b9a1e68b6c0a0c464921f3a4ebc5de830764eb8
 Ž
 ^app/src/main/java/com/example/recyclerdetail/ui/editEmployeesActivity/EditEmployeesActivity.kt,8\3\83cac06deff7084ec6c8dbd5af0a155443a249c2
+<
+build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 r
 Bapp/src/main/java/com/example/recyclerdetail/daoData/Repository.kt,1\9\198b5c820d554136a5568ac7c929ebe49d469bab
 ‹
 [app/src/main/java/com/example/recyclerdetail/ui/editEmployeesActivity/EditEmployeesState.kt,b\f\bfeaf5e8e544b45076b744560c91552aa25d26a4
+
+_app/src/main/java/com/example/recyclerdetail/ui/editEmployeesActivity/EditEmployeesViewModel.kt,c\9\c97ee6df9134d09ae92c8ed8d9345742bf838357
 r
 Bapp/src/main/java/com/example/recyclerdetail/ui/ScreenConstants.kt,d\a\daace585358cb05cd46973f158c8eaeac4f99cd2
 |
@@ -27,9 +31,5 @@ s
 Capp/src/main/java/com/example/recyclerdetail/ui/AdapterEmployees.kt,3\5\35cd85417a4c9bffa40d6bcfd8c86a33d91a9290
 y
 Iapp/src/main/java/com/example/recyclerdetail/ui/mainActivity/MainState.kt,5\3\53c156c1069c3f1127e70bc0ddfa6950851a1dda
-<
-build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-
-_app/src/main/java/com/example/recyclerdetail/ui/editEmployeesActivity/EditEmployeesViewModel.kt,c\9\c97ee6df9134d09ae92c8ed8d9345742bf838357
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164

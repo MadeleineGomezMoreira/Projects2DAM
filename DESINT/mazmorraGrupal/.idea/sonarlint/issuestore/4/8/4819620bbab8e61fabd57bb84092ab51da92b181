@@ -1,0 +1,9 @@
+
+[
+java:S1192c"FDefine a constant instead of duplicating this literal "Error" 4 times.(Ú ¬n
+N
+java:S2755x"3Disable access to external entities in XML parsing.(ƒ”±êùÿÿÿÿ
+_
+java:S3252,"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´
+n
+java:S3776Ù"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.( ´õ¸úÿÿÿÿ

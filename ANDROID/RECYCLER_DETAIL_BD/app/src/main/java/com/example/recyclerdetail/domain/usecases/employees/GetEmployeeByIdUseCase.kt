@@ -2,7 +2,7 @@ package com.example.recyclerdetail.domain.usecases.employees
 
 import android.os.Build
 import androidx.annotation.RequiresApi
-import com.example.recyclerdetail.daoData.Repository
+import com.example.recyclerdetail.data.Repository
 
 class GetEmployeeByIdUseCase {
 

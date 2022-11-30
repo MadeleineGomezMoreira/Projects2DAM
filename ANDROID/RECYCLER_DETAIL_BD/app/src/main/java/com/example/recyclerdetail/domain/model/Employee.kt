@@ -1,12 +1,15 @@
 package com.example.recyclerdetail.domain.model
 
+import java.time.LocalDate
+
 data class Employee(
     val name: String,
-    val id: String,
+    val id: Int,
     val gender: String,
-    val birthYear: Int,
+    val birthday: LocalDate,
     val active: Boolean,
-    val phoneNumber: Int
+    val phoneNumber: Int,
+    val things : List<Thing>?
 ) {
 
 
