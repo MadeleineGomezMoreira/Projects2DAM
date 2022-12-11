@@ -6,7 +6,7 @@ import com.example.recyclerdetail.data.model.toThing
 
 class GetEmployeesDes(private val employeeRepository: EmployeeRepository) {
 
-    suspend fun invoke(id:Int) = employeeRepository.getEmployeeWithThings(id).toEmployee()
+    suspend fun invoke(id: Int) = employeeRepository.getEmployeeWithThings(id).toEmployee()
 
     suspend fun invoke() = employeeRepository.getEmployeesDes().map { it.toEmployee() }
 

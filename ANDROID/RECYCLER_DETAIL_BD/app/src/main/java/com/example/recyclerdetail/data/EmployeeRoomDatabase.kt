@@ -10,7 +10,7 @@ import com.example.recyclerdetail.data.model.ThingEntity
 
 @Database(entities = [EmployeeEntity::class, ThingEntity::class], version = 6, exportSchema = true)
 @TypeConverters(Converters::class)
-abstract class EmployeeRoomDatabase : RoomDatabase(){
+abstract class EmployeeRoomDatabase : RoomDatabase() {
 
     abstract fun employeeDao(): EmployeeDao
     abstract fun thingDao(): ThingDao

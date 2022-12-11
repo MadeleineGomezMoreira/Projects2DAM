@@ -9,8 +9,5 @@ data class Employee(
     val birthday: LocalDate,
     val active: Boolean,
     val phoneNumber: Int,
-    val things : List<Thing>?
-) {
-
-
-}
+    val things: List<Thing>?
+)

@@ -31,7 +31,7 @@ interface EmployeeDao {
     // Specify the conflict strategy as IGNORE, when the user tries to add an
     // existing Item into the database Room ignores the conflict.
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(item: EmployeeEntity) : Long
+    suspend fun insert(item: EmployeeEntity): Long
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(item: ThingEntity)
@@ -42,8 +42,8 @@ interface EmployeeDao {
     @Transaction
     suspend fun createTransaction(employeeThings: EmployeeWithThings) {
         employeeThings.employee.id = insert(employeeThings.employee).toInt()
-        employeeThings.things?.apply{
-            forEach { it.employeeId = employeeThings.employee.id  }
+        employeeThings.things?.apply {
+            forEach { it.employeeId = employeeThings.employee.id }
             insert(this)
         }
     }

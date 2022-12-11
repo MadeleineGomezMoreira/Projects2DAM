@@ -15,4 +15,6 @@
     <string name="old">Old</string>
     <string name="Female">Female</string>
     <string name="Male">Male</string>
+    <string name="birth_day">birthday</string>
+    <string name="defaultDate">01–01–2000</string>
 </resources>
