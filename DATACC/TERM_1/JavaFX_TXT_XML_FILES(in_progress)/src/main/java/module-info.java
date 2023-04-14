@@ -14,6 +14,9 @@ module javafx11.multipantalla {
     requires com.google.gson;
     requires org.junit.jupiter.api;
     requires io.vavr;
+    requires java.sql;
+    requires commons.dbcp2;
+    requires com.zaxxer.hikari;
 
     exports ui.main to javafx.graphics;
     exports ui.screens.principal;

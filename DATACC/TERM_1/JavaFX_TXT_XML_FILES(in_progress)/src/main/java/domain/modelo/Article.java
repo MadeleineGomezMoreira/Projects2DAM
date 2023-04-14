@@ -5,14 +5,14 @@ import lombok.Data;
 @Data
 public class Article {
 
-    private String title;
-    private int articleId;
-    private int newspaperId;
+    private int id;
+    private String name;
     private int typeId;
+    private int newspaperId;
 
-    public Article(String title, int articleId, int newspaperId, int typeId) {
-        this.title = title;
-        this.articleId = articleId;
+    public Article(String name, int id, int newspaperId, int typeId) {
+        this.name = name;
+        this.id = id;
         this.newspaperId = newspaperId;
         this.typeId = typeId;
     }

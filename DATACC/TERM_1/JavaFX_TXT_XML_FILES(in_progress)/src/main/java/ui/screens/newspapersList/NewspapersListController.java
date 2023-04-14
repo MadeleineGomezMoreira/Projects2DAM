@@ -12,7 +12,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import ui.screens.common.BaseScreenController;
-import ui.screens.common.ScreenConstants;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -66,7 +65,7 @@ public class NewspapersListController extends BaseScreenController implements In
         MFXTableColumn<Newspaper> releaseDateColumn = new MFXTableColumn<>("Release Date");
 
         nameColumn.setRowCellFactory(harryPotterCharacter -> new MFXTableRowCell<>(Newspaper::getName));
-        idColumn.setRowCellFactory(harryPotterCharacter -> new MFXTableRowCell<>(Newspaper::getNewspaperId));
+        idColumn.setRowCellFactory(harryPotterCharacter -> new MFXTableRowCell<>(Newspaper::getId));
         releaseDateColumn.setRowCellFactory(harryPotterCharacter -> new MFXTableRowCell<>(Newspaper::getReleaseDate));
 
 

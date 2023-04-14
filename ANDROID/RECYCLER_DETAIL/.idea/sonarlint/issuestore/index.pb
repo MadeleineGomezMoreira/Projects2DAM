@@ -17,8 +17,6 @@ capp/src/main/java/com/example/recyclerdetail/domain/usecases/employees/GetEmplo
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 r
 Bapp/src/main/java/com/example/recyclerdetail/ui/ScreenConstants.kt,d\a\daace585358cb05cd46973f158c8eaeac4f99cd2
-|
-Lapp/src/main/java/com/example/recyclerdetail/ui/mainActivity/MainActivity.kt,9\d\9d11c7a1ff4d26e6c9a823c9847cc8f2a32984f6
 s
 Capp/src/main/java/com/example/recyclerdetail/ui/AdapterEmployees.kt,3\5\35cd85417a4c9bffa40d6bcfd8c86a33d91a9290
 è
@@ -31,7 +29,9 @@ Iapp/src/main/java/com/example/recyclerdetail/ui/mainActivity/MainState.kt,5\3\
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 Ö
 Uapp/src/main/java/com/example/recyclerdetail/ui/mainActivity/MainActivityViewModel.kt,3\d\3dbf85c3c8ad3d200ed50e5c7734d3a366bf8720
-u
-Eapp/src/main/java/com/example/recyclerdetail/domain/model/Employee.kt,8\f\8f5d66c51bf1b135d7649dc490e90fb8b0d3586e
 r
 Bapp/src/main/java/com/example/recyclerdetail/daoData/Repository.kt,1\9\198b5c820d554136a5568ac7c929ebe49d469bab
+|
+Lapp/src/main/java/com/example/recyclerdetail/ui/mainActivity/MainActivity.kt,9\d\9d11c7a1ff4d26e6c9a823c9847cc8f2a32984f6
+u
+Eapp/src/main/java/com/example/recyclerdetail/domain/model/Employee.kt,8\f\8f5d66c51bf1b135d7649dc490e90fb8b0d3586e

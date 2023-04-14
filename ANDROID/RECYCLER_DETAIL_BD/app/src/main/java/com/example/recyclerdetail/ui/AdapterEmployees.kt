@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat.startActivity
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerdetail.R
 import com.example.recyclerdetail.databinding.EmployeeCardBinding
@@ -14,9 +16,16 @@ import com.example.recyclerdetail.domain.model.Employee
 import com.example.recyclerdetail.ui.editEmployeesActivity.EditEmployeesActivity
 import timber.log.Timber
 
+/*
 class AdapterEmployees(
     private var employees: List<Employee>,
 ) : RecyclerView.Adapter<EmployeeViewHolder>() {
+
+ */
+
+class AdapterEmployees(private var employees: List<Employee>) :
+    ListAdapter<Employee, EmployeeViewHolder>(DiffCallback()) {
+
 
     var selectedEmployees: MutableList<Employee> = mutableListOf()
 
@@ -83,5 +92,15 @@ class EmployeeViewHolder(private val view: View) : RecyclerView.ViewHolder(view)
 
             }
         }
+    }
+}
+
+class DiffCallback : DiffUtil.ItemCallback<Employee>() {
+    override fun areItemsTheSame(oldItem: Employee, newItem: Employee): Boolean {
+        return oldItem.id == newItem.id
+    }
+
+    override fun areContentsTheSame(oldItem: Employee, newItem: Employee): Boolean {
+        return oldItem == newItem
     }
 }

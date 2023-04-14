@@ -7,13 +7,13 @@ import java.time.LocalDate;
 @Data
 public class Newspaper {
 
+    private int id;
     private String name;
-    private int newspaperId;
     private LocalDate releaseDate;
 
-    public Newspaper(String name, int newspaperId, LocalDate releaseDate) {
+    public Newspaper(String name, int id, LocalDate releaseDate) {
         this.name = name;
-        this.newspaperId = newspaperId;
+        this.id = id;
         this.releaseDate = releaseDate;
     }
 }
